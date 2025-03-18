@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #a52d2d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+}
+
+.tasks ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tasks li {
+    background: #eee;
+    padding: 2rem;
+    margin: 3rem;
+    border-radius: 5px;
+    box-shadow: 6px 6px lightgray;
+}
