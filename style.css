@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'horizon';
+    src: url('fonts/horizon.woff2') format('woff2');
+}
+
 :root {
     --fw-padding: 3rem;
 }
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -11,22 +20,25 @@ body {
 
 .first-view {
     height: 100vh;
-    margin-left: var(--fw-padding);
-    margin-right: var(--fw-padding);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .first-view header {
     align-self: top;
-    /* padding: 20px; */
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    color: white;
 }
 
 .first-view header h1 {
     padding-top: 2rem;
     padding-bottom: 1rem;
-    text-align: left;
     font-size: 24px;
 }
 
@@ -40,18 +52,42 @@ body {
     align-self: bottom;
     text-align: left;
     font-size: 4vmin;
+    color: white;
+}
+
+.first-view section h1 {
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    font-family: 'horizon';
+    line-height: 1;
+}
+
+.first-view section h3 {
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    font-family: 'Poppins';
+    line-height: 1.4;
+}
+
+.color1 {
+    background-color: rgb(6, 9, 36);
 }
 
 .columns {
+    padding-left: var(--fw-padding);
+    padding-right: var(--fw-padding);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     gap: 2rem;
+    font-family: 'Poppins';
+    line-height: 1;
 }
 
 .column {
     width: 50%;
-    padding-bottom: var(--fw-padding);
     font-size: 2.5vw;
 }
