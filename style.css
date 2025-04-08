@@ -86,18 +86,26 @@ body {
     padding-right: var(--fw-padding);
     padding-top: 2rem;
     padding-bottom: 2rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 2rem;
     font-family: 'Poppins';
     line-height: 1;
 }
 
 .column {
-    width: 50%;
     font-size: min(2.5vw, 28px);
+}
+
+@media screen and (min-width: 768px) {
+    .columns {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .column {
+        width: 50%;
+    }
 }
 
 .text-content-view {
