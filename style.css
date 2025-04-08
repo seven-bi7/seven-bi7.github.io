@@ -78,7 +78,7 @@ body {
 }
 
 .color1 {
-    background-color: rgb(6, 9, 36);
+    background-color: rgb(5, 10, 48);
 }
 
 .columns {
@@ -128,12 +128,23 @@ body {
     color: #050a30
 }
 
+.content-title {
+    font-family: 'Anton';
+    font-size: 4rem;
+    color: rgb(0, 74, 173);
+}
 
-#conclusion {
-    padding-left: var(--cw-padding);
-    padding-right: var(--cw-padding);
-    font-size: 4vmin;
-    color: rgb(4, 53, 157);
+#content-subtitle {
+    font-family: 'Poppins Medium';
+    font-size: 3rem;
+    color: rgb(0, 74, 173);
+}
+
+#explaination-text {
+    font-family: 'Poppins';
+    font-size: 2.5rem;
+    color: #004aad;
+    text-align: center;
 }
 
 .columns-conclusion {
@@ -141,11 +152,31 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 2rem;
-    font-family: 'Poppins';
+    font-family: 'Anton';
     line-height: 1;
-    color: #050a30;
+    color: #004aad;
+}
+
+.columns-conclusion h3 {
+    font-size: 4vmin;
+}
+
+.column1 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 45%;
+    text-wrap: wrap;
+    font-size: min(2.5vw, 28px);
+}
+
+.column2 {
+    width: 55%;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+    background-position: center;
 }
 
 #columns-footer {
@@ -178,6 +209,124 @@ body {
     align-items: center;
     font-family:'horizon' ;
     color: white;
+}
+
+.ux-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ux-tool-card {
+    background-color: #f8f9fa;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ux-tool-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+.ux-tool-card h4 {
+    font-family: 'horizon', sans-serif;
+    font-size: 2.2rem;
+    margin: 0;
+    color: white;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.ux-tool-card img {
+    display: none;
+}
+
+.ux-tool-card p {
+    display: none;
+}
+
+.ux-tool-card:nth-child(1) {
+    background-image: url('images/select.png');
+}
+
+.ux-tool-card:nth-child(2) {
+    background-image: url('images/fumetto.png');
+}
+
+.ux-tool-card:nth-child(3) {
+    background-image: url('images/smiles.png');
+}
+
+.ux-tool-card:nth-child(4) {
+    background-image: url('images/diagram.png');
+}
+
+.ux-tool-card:nth-child(5) {
+    background-image: url('images/drew.png');
+}
+
+.ux-tool-card:nth-child(6) {
+    background-image: url('images/table.png');
+}
+
+.ux-tool-card:nth-child(7) {
+    background-image: url('images/wireframe.png');
+}
+
+.ux-tool-card:nth-child(8) {
+    background-image: url('images/abtest.png');
+}
+
+.ux-tool-card:nth-child(9) {
+    background-image: url('images/phones.png');
+}
+
+.ux-tool-card:nth-child(10) {
+    background-image: url('images/phones.png');
+}
+
+/* Hover effect */
+.ux-tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.ux-tool-card:hover::before {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+}
+
+@media screen and (max-width: 768px) {
+    .ux-tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ux-tool-card h4 {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
