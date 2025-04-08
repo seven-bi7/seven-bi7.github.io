@@ -310,7 +310,6 @@ body {
     background-image: url('images/phones.png');
 }
 
-/* Hover effect */
 .ux-tool-card:hover {
     transform: translateY(-5px);
 }
