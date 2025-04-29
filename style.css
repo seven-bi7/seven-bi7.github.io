@@ -12,6 +12,8 @@
     --fw-padding: 3rem;
     --cw-padding: 3rem;
     font-family: 'Poppins';
+    --custom-blue: rgb(4, 53, 157);
+    --custom-black: rgb(6, 9, 36);
 }
 
 @media screen and (min-width: 1280px) {
@@ -26,6 +28,8 @@ body {
     color: #333;
 }
 
+/* -------------------------- FIRST VIEW */
+
 .first-view {
     height: 100vh;
     display: flex;
@@ -37,10 +41,15 @@ body {
     background-size: cover;
 }
 
+.first-view > * {
+    padding-left: var(--fw-padding);
+    padding-right: var(--fw-padding);
+}
+
+/* -------- HEADER */
+
 .first-view header {
     align-self: top;
-    margin-left: var(--fw-padding);
-    margin-right: var(--fw-padding);
     color: white;
 }
 
@@ -56,6 +65,8 @@ body {
     background-color: #ddd;
 }
 
+/* -------- SECTION */
+
 .first-view section {
     align-self: bottom;
     text-align: left;
@@ -64,122 +75,49 @@ body {
 }
 
 .first-view section h1 {
-    margin-left: var(--fw-padding);
-    margin-right: var(--fw-padding);
     font-family: 'horizon';
     line-height: 1;
 }
 
 .first-view section h3 {
-    margin-left: var(--fw-padding);
-    margin-right: var(--fw-padding);
     font-family: 'Poppins';
     line-height: 1.4;
 }
 
-.color1 {
-    background-color: rgb(6, 9, 36);
-}
+/* -------- PARAGRAPH */
 
 #first-paragraph {
-    padding-left: var(--fw-padding);
     padding-top: 2rem;
     padding-bottom: 2rem;
-    font-family: 'Poppins Medium';
-    width: 83%;
+    background-color: rgb(6, 9, 36);
+    color: white;
+    font-family: 'Poppins';
     font-size: min(2.5vw, 28px);
 }
+
+/* -------------------------- TEXT CONTENT VIEW */
 
 .text-content-view {
     padding-left: var(--cw-padding);
     padding-right: var(--cw-padding);
     padding-top: 2rem;
     padding-bottom: 2rem;
-    font-size: 4vmin;
-    color: rgb(4, 53, 157);
-    line-height: 1.4;
+    font-size: min(4vmin, 28px);;
+    color: var(--custom-blue);
+    line-height: 1.6;
 }
 
 .text-content-view p {
     font-size: min(2.5vw, 28px);
-    line-height: 1.5;
+    line-height: 1.4;
+    color: var(--custom-black);
 }
 
-.content-view h1 {
-    font-family: 'horizon';
-}
-
-.content-view img {
-    width: 100%;
-    height: auto;
-}
-
-.content-view p {
-    color: #050a30
-}
-
-
-#conclusion {
-    padding-left: var(--cw-padding);
-    padding-right: var(--cw-padding);
-    font-size: 4vmin;
-    color: rgb(4, 53, 157);
-}
-
-.columns-conclusion {
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 2rem;
-    font-family: 'Poppins';
-    line-height: 1;
-    color: #050a30;
-}
-
-#columns-footer {
-    padding-left: var(--fw-padding);
-    padding-right: var(--fw-padding);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 2rem;
-    font-family: 'Poppins';
-    line-height: 1;
-}
-
-#column-right-footer {
-    width: 50%;
-    font-size: min(2.5vw, 28px);
-    color: white;
-    text-align: right;
-    line-height: 1.1;
-}
-
-#column-left-footer {
-    margin-top: 1rem;
-    width: 30%;
-    font-size: min(12vw, 28px);
-    text-align: center;
-    align-items: center;
-    font-family:'horizon' ;
-    color: white;
-}
-
-@media screen and (min-width: 1024px) {
-    #column-left-footer {
-        font-size: 6rem;
-    }
-}
+/* -------- HERO */
 
 .hero-quote-container {
   position: relative;
-  width: 100%;
-  max-width: 100vw;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,18 +135,16 @@ body {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(6, 9, 36, 0.7);
+  background: rgba(255, 255, 255, 0.6);
   z-index: 1;
 }
 
 .hero-quote {
   position: absolute;
   z-index: 2;
-  color: #b3c6f7;
   text-align: center;
   width: 100%;
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: 600;
   padding: 0 2vw;
   display: flex;
@@ -218,14 +154,36 @@ body {
 }
 
 .quote-author {
-  color: #b3e0ff;
   font-size: clamp(1rem, 2vw, 1.5rem);
   margin-top: 1rem;
   font-weight: 400;
 }
 
 .quote-text {
-  font-size: min(5vw, 48px);
+  color: var(--custom-blue);
+  font-size: clamp(2.5rem, 5.3vw, 3.8rem);
   font-weight: 700;
   line-height: 1.1;
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-quote-container {
+        height: 28vh;
+    }
+
+    .hero-quote-container.terzaimm {
+        height: 30vh;
+    }
+
+    .hero-quote {
+        padding: 0 4vw;
+    }
+
+    .quote-text {
+        font-size: clamp(1.2rem, 5vw, 4rem);
+    }
+
+    .quote-author {
+        font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+    }
 }
