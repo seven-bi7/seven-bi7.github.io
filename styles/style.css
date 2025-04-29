@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'Poppins';
-    src: url('fonts/Poppins-Medium.woff2') format('woff2');
+    src: url('../fonts/Poppins-Medium.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'horizon';
-    src: url('fonts/horizon.woff2') format('woff2');
+    src: url('../fonts/horizon.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'anton';
-    src: url('fonts/Anton.woff2') format('woff2');
+    src: url('../fonts/Anton.woff2') format('woff2');
 }
 
 :root {
@@ -45,7 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -262,7 +262,7 @@ body {
 
 .column2 {
     width: 55%;
-    background-image: url("images/conclusion.jpg");
+    background-image: url("../images/conclusion.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -350,43 +350,43 @@ body {
 }
 
 .ux-tool-card:nth-child(1) {
-    background-image: var(--card-gradient), url('images/select.png');
+    background-image: var(--card-gradient), url('../images/select.png');
 }
 
 .ux-tool-card:nth-child(2) {
-    background-image: var(--card-gradient), url('images/fumetto.png');
+    background-image: var(--card-gradient), url('../images/fumetto.png');
 }
 
 .ux-tool-card:nth-child(3) {
-    background-image: var(--card-gradient), url('images/smiles.png');
+    background-image: var(--card-gradient), url('../images/smiles.png');
 }
 
 .ux-tool-card:nth-child(4) {
-    background-image: var(--card-gradient), url('images/diagram.png');
+    background-image: var(--card-gradient), url('../images/diagram.png');
 }
 
 .ux-tool-card:nth-child(5) {
-    background-image: var(--card-gradient), url('images/drew.png');
+    background-image: var(--card-gradient), url('../images/drew.png');
 }
 
 .ux-tool-card:nth-child(6) {
-    background-image: var(--card-gradient), url('images/table.png');
+    background-image: var(--card-gradient), url('../images/table.png');
 }
 
 .ux-tool-card:nth-child(7) {
-    background-image: var(--card-gradient), url('images/wireframe.png');
+    background-image: var(--card-gradient), url('../images/wireframe.png');
 }
 
 .ux-tool-card:nth-child(8) {
-    background-image: var(--card-gradient), url('images/abtest.png');
+    background-image: var(--card-gradient), url('../images/abtest.png');
 }
 
 .ux-tool-card:nth-child(9) {
-    background-image: var(--card-gradient), url('images/phones.png');
+    background-image: var(--card-gradient), url('../images/phones.png');
 }
 
 .ux-tool-card:nth-child(10) {
-    background-image: var(--card-gradient), url('images/phones.png');
+    background-image: var(--card-gradient), url('../images/phones.png');
 }
 
 @media screen and (max-width: 768px) {

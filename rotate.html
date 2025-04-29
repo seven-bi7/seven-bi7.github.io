@@ -1,0 +1,90 @@
+<!-- rotate.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: rgb(4, 53, 157); /* blu */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+    }
+
+    #message {
+      padding: 2rem;
+    }
+
+    .phone-icon {
+      width: 60px;
+      height: 100px;
+      border: 3px solid white;
+      border-radius: 12px;
+      margin: 1rem auto;
+      position: relative;
+      animation: rotatePhone 2.5s infinite;
+      transform-origin: center;
+    }
+
+    .phone-icon::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 5px;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    @keyframes rotatePhone {
+      0% { transform: rotate(0deg); }
+      30% { transform: rotate(90deg); }
+      60% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    @media (orientation: landscape) {
+      #message::after {
+        content: 'Reindirizzamento...';
+        display: block;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: #eee;
+      }
+    }
+  </style>
+  <title>Ruota il dispositivo</title>
+</head>
+<body>
+  <div id="message">
+    <div class="phone-icon"></div>
+    <h1>Ruota il dispositivo</h1>
+    <p>Per visualizzare il wireframe,<br> ruota il telefono in orizzontale.</p>
+  </div>
+
+  <script>
+    if (window.innerWidth > 768) {
+      window.location.href = "wireframe.html";
+    }
+
+    function checkOrientation() {
+      if (window.matchMedia("(orientation: landscape)").matches) {
+        window.location.href = "wireframe.html";
+      }
+    }
+
+    checkOrientation();
+    window.addEventListener("orientationchange", () => {
+      setTimeout(checkOrientation, 500);
+    });
+  </script>
+</body>
+</html>
