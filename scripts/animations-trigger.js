@@ -35,3 +35,7 @@ animable.forEach((element) => {
 
 if(window.innerWidth <= 768)
     window.addEventListener('scroll', checkCentered);
+
+function goTutorial(tutorial) {
+    window.location.href = tutorial+".html"; 
+}

@@ -46,6 +46,6 @@ function prev() {
     }
 }
 
-function exit() {
-    return;
+function goHome() {
+    window.location.href = "index.html"; 
 }
