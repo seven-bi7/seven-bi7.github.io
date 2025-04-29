@@ -17,6 +17,10 @@
     font-family: 'Poppins';
     --fw-padding: 3rem;
     --cw-padding: 3rem;
+    font-family: 'Poppins';
+    --custom-blue: rgb(4, 53, 157);
+    --custom-dark-blue: rgb(6, 9, 36);
+    --custom-black: rgb(6, 9, 36);
     --grid-padding: 2rem;
     --card-gradient: linear-gradient(rgba(8, 18, 88, 0.8), rgba(8, 18, 88, 0.8))
 }
@@ -34,8 +38,8 @@ body {
     color: #333;
 }
 
-
 /* -------------------------- FIRST VIEW */
+
 .first-view {
     height: 100vh;
     display: flex;
@@ -47,10 +51,15 @@ body {
     background-size: cover;
 }
 
+.first-view > * {
+    padding-left: var(--fw-padding);
+    padding-right: var(--fw-padding);
+}
+
+/* -------- HEADER */
+
 .first-view header {
     align-self: top;
-    margin-left: var(--fw-padding);
-    margin-right: var(--fw-padding);
     color: white;
 }
 
@@ -66,6 +75,8 @@ body {
     background-color: #ddd;
 }
 
+/* -------- SECTION */
+
 .first-view section {
     align-self: bottom;
     text-align: left;
@@ -74,48 +85,25 @@ body {
 }
 
 .first-view section h1 {
-    margin-left: var(--fw-padding);
-    margin-right: var(--fw-padding);
     font-family: 'horizon';
     line-height: 1;
 }
 
 .first-view section h3 {
-    margin-left: var(--fw-padding);
-    margin-right: var(--fw-padding);
     font-family: 'Poppins';
     line-height: 1.4;
 }
 
-.color1 {
-    background-color: rgb(5, 10, 48);
-}
+/* -------- PARAGRAPH */
 
-.columns {
-    padding-left: var(--fw-padding);
-    padding-right: var(--fw-padding);
+#first-paragraph {
     padding-top: 2rem;
     padding-bottom: 2rem;
+    background-color: rgb(6, 9, 36);
+    color: white;
     font-family: 'Poppins';
-    line-height: 1;
-}
-
-.column {
+    line-height: 1.2;
     font-size: min(2.5vw, 28px);
-}
-
-@media screen and (min-width: 768px) {
-    .columns {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        gap: 2rem;
-    }
-
-    .column {
-        width: 50%;
-    }
 }
 
 /* -------------------------- CONTENT VIEW */
@@ -138,14 +126,90 @@ body {
     padding-right: var(--cw-padding);
     padding-top: 2rem;
     padding-bottom: 2rem;
-    font-size: 4vmin;
-    color: rgb(4, 53, 157);
-    line-height: 1.4;
+    font-size: min(4vmin, 28px);;
+    color: var(--custom-blue);
+    line-height: 1.6;
 }
 
 .text-content-view p {
     font-size: min(2.5vw, 28px);
-    line-height: 1.5;
+    line-height: 1.4;
+    color: var(--custom-black);
+}
+
+/* -------- HERO */
+
+.hero-quote-container {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+.hero-quote {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 0 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-author {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin-top: 1rem;
+  font-weight: 400;
+}
+
+.quote-text {
+  color: var(--custom-blue);
+  font-size: clamp(2.5rem, 5.3vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-quote-container {
+        height: 28vh;
+    }
+
+    .hero-quote-container.terzaimm {
+        height: 30vh;
+    }
+
+    .hero-quote {
+        padding: 0 4vw;
+    }
+
+    .quote-text {
+        font-size: clamp(1.2rem, 5vw, 4rem);
+    }
+
+    .quote-author {
+        font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+    }
 }
 
 .content-title {
@@ -210,6 +274,7 @@ body {
     padding-right: var(--fw-padding);
     padding-top: 2rem;
     padding-bottom: 2rem;
+    background-color: var(--custom-dark-blue);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
