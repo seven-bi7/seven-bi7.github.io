@@ -22,6 +22,7 @@ body {
 }
 
 .box {
+    font-family: 'Poppins';
     background-color: white;
     position: relative;
     border-radius: 3rem;
@@ -34,6 +35,7 @@ body {
 .box img {
     width: 100%;
     height: auto;
+    border-radius: 2rem;
 }
 
 @media screen and (max-width: 768px){
