@@ -32,14 +32,72 @@ body {
     max-width: 768px;
 }
 
+.conclusion-b {
+    font-family: 'Poppins';
+    position: relative;
+    border-radius: 3rem;
+    --md-elevation-level: 3;
+    padding: 0.5rem 2rem;
+    margin: 3rem auto 3rem auto;
+    max-width: 788px;
+}
+
 .box img {
     width: 100%;
     height: auto;
     border-radius: 2rem;
 }
 
+.conclusion-t {
+    font-family: 'Anton';
+    color: white;
+    width: 100%;
+    font-size: 2.1rem;
+}
+
+.conclusion-p {
+    font-family: 'poppins';
+    color: white;
+    font-size: 1.5;
+}
+
 @media screen and (max-width: 768px){
     .box{
         margin: 2rem 1rem 2rem 1rem;
     }
+    
+    .conclusion-t {
+        font-size: 1.5rem;
+    }
+
+    .conclusion-p {
+        font-size: 0.7rem;
+    }
+}
+
+#torna-su {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#torna-su a * {
+    text-decoration: none !important;
+    color: blue !important;
+    cursor: pointer !important;
+}
+
+#torna-su md-filled-button {
+    font-family: 'Poppins';
+    max-width: 10rem;
+    margin: auto auto 2rem auto;
+    --md-sys-color-primary: white;
+    --md-filled-button-label-text-color: black;
+}
+
+#torna-su md-icon {
+    color:white;
+    transform: scale(3);
+    padding: 1rem 0;
+    margin: auto auto;
 }

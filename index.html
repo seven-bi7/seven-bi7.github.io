@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/animista.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
     <title>7bit+1</title>
   </head>
 
   <body>
     <script src="scripts/bundle.js"></script>
-    <div class="box">
+    <div class="box" id="start">
       <md-elevation></md-elevation>
       <h2>Tap to reveal</h2>
       <p>L’utente tocca un'icona informativa (ⓘ o ?) per attivare un piccolo box che
@@ -131,6 +132,22 @@
           <li>Potenziale rischio di overload visivo</li>
         </ul>
       </p>
+    </div>
+    <div class="conclusion-b">
+      <h2 class="conclusion-t">
+        I tooltips secondo 7bit+1
+      </h2>
+      <p class="conclusion-p">
+        Tra le varie soluzioni esplorate per adattare la funzionalità dei tooltip dall’ambiente desktop a quello mobile, le più efficaci risultano essere due strategie complementari: l’utilizzo progressivo di tooltip automatici e l’attivazione tramite long press. Introdurre l’interfaccia attraverso un breve tutorial guidato da tooltip che compaiono gradualmente nelle prime fasi di utilizzo dell’app permette agli utenti di familiarizzare con le principali funzionalità in modo fluido e non invasivo. Questo approccio aiuta a mantenere l’interfaccia pulita, senza icone o testi ridondanti, e rispetta le dinamiche tipiche dell’uso touch.
+        <br><br>
+        In aggiunta, i tooltip possono essere attivati automaticamente in momenti chiave dell’esperienza – come l’uso di funzioni complesse, l’accesso a nuove sezioni o il rilascio di feature inedite – offrendo un supporto contestuale mirato, senza richiedere azioni specifiche da parte dell’utente. Tuttavia, per garantire massima flessibilità, è utile affiancare a questi tooltip automatici la possibilità di richiamarli manualmente tramite long press: un gesto già noto agli utenti, che consente di ottenere ulteriori informazioni su un elemento in qualsiasi momento, solo quando desiderato.
+        <br><br>
+        L’integrazione di questi due metodi – automatico e volontario – consente di replicare l’esperienza dell’hover del desktop in modo adattivo e coerente con il mobile, unendo chiarezza, estetica e controllo dell’utente. Il risultato è un’interazione più narrativa e personalizzata, capace di migliorare l’usabilità complessiva e rafforzare l’engagement con l’app.
+      </p>
+    </div>
+    <div id="torna-su" onclick="window.scrollTo(0, 0);">
+      <md-filled-button>Torna su</md-filled-button>
+      <md-icon>expand_circle_up</md-icon>
     </div>
   </body>
 </html>
