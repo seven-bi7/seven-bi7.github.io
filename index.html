@@ -11,15 +11,19 @@
 
   <body>
     <div class="first-view">
-      <header>
-        <h1>7bit+1</h1>
-        <hr />
-      </header>
+      <div class="fullvh">
+        <header>
+          <h1>7bit+1</h1>
+          <hr />
+        </header>
+        <section>
+          <h1>Tooltips:</h1>
+          <h3>
+            Cosa sono e perchè <br />pongono problemi tra le <br>versioni desktop e mobile
+          </h3>
+        </section>
+      </div>
       <section>
-        <h1>Tooltips:</h1>
-        <h3>
-          Cosa sono e perchè <br />pongono problemi tra le <br>versioni desktop e mobile
-        </h3>
         <div class="white-divider"></div>
         <div class="text">
           <h3>Cosa sono i tooltips</h3>
@@ -181,9 +185,10 @@
         L’integrazione di questi due metodi – automatico e volontario – consente di replicare l’esperienza dell’hover del desktop in modo adattivo e coerente con il mobile, unendo chiarezza, estetica e controllo dell’utente. Il risultato è un’interazione più narrativa e personalizzata, capace di migliorare l’usabilità complessiva e rafforzare l’engagement con l’app.
       </p>
     </div>
-    <div id="torna-su" onclick="window.scrollTo(0, 0);">
-      <md-filled-button>Torna su</md-filled-button>
-      <md-icon>expand_circle_up</md-icon>
+    <div id="torna-su">
+      <div id="tooltip" class="blink-2">Torna su</div>
+      <md-icon onclick="window.scrollTo(0, 0);">expand_circle_up</md-icon>
+      <script src="scripts/tooltip.js"></script>
     </div>
   </body>
 </html>

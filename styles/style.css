@@ -27,18 +27,6 @@ body {
     padding: 0;
     background-color: var(--custom-blue);
 }
-
-.first-view {
-    /* height: 100vh; */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-image: url('../images/intro_bg.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-}
         
 .first-view header {
     align-self: top;
@@ -63,7 +51,6 @@ body {
 }
 
 .first-view section {
-    margin-top: 15rem;
     align-self: bottom;
     text-align: left;
     font-size: 4vmin;
@@ -85,6 +72,18 @@ body {
     font-family: 'Poppins';
     font-weight: 500; /* Medium */
     line-height: 1.4;
+}
+
+.fullvh {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background-image: url('../images/intro_bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .white-divider {
@@ -191,23 +190,14 @@ body {
 }
 
 #torna-su {
+    --tooltip-animation: blink-out 0.7s both;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#torna-su a * {
-    text-decoration: none !important;
-    color: blue !important;
-    cursor: pointer !important;
-}
-
-#torna-su md-filled-button {
-    font-family: 'Poppins';
-    max-width: 10rem;
-    margin: auto auto 2rem auto;
-    --md-sys-color-primary: white;
-    --md-filled-button-label-text-color: black;
+#torna-su:hover {
+    --tooltip-animation: blink-2 0.7s both;
 }
 
 #torna-su md-icon {
@@ -215,4 +205,34 @@ body {
     transform: scale(3);
     padding: 1rem 0;
     margin: auto auto;
+}
+
+#tooltip {
+    opacity: 0;
+    animation: var(--tooltip-animation);
+    font-family: 'Poppins';
+    margin: auto auto 2rem auto;
+    background-color: white;
+    color: black;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    height: fit-content;
+}
+
+@media screen and (max-width: 768px) {
+    #torna-su {
+        --tooltip-animation: opacity 3s both infinite;
+    }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
