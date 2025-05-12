@@ -29,7 +29,7 @@ body {
 }
 
 .first-view {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -38,7 +38,7 @@ body {
     background-position: center;
     background-size: cover;
     overflow: hidden;
-    }
+}
         
 .first-view header {
     align-self: top;
@@ -117,7 +117,7 @@ body {
 
 .text img {
     display: block;
-    margin: 2rem auto; 
+    margin: 2rem auto auto auto; 
     max-width: 100%;   
     height: auto;
   }
