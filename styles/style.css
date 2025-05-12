@@ -15,10 +15,125 @@
 
 :root {
     --custom-blue: rgb(6, 9, 36);
+    font-family: 'Poppins';
+    --fw-padding: 3rem;
+    --cw-padding: 3rem;
+    --grid-padding: 2rem;
+    
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: var(--custom-blue);
+}
+
+.first-view {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: url('../images/intro_bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    }
+        
+.first-view header {
+    align-self: top;
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    color: white;
+}
+
+.first-view header h1 {
+    padding-top: 4rem;
+    padding-bottom: 0rem;
+    font-size: 3rem; 
+    font-family: 'Poppins'; 
+    font-weight: 500; 
+}
+
+.first-view header hr {
+    border: 0;
+    height: 5px;
+    margin-top: -1rem;
+    background-color: #ddd;
+}
+
+.first-view section {
+    margin-top: 15rem;
+    align-self: bottom;
+    text-align: left;
+    font-size: 4vmin;
+    color: white;
+}
+
+.first-view section h1 {
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    font-family: 'Anton';
+    line-height: 0;
+    font-size: 5rem;
+    letter-spacing: 0.03em;
+}
+
+.first-view section h3 {
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    font-family: 'Poppins';
+    font-weight: 500; /* Medium */
+    line-height: 1.4;
+}
+
+.white-divider {
+    border: none;
+    height: 3rem;
+    background-color: white;
+    width: 100vw;
+    margin: 0;
+}
+
+.text h3 {
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    font-family: 'Anton';
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 1.6;
+    color: white;
+}
+
+.text p {
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+.text img {
+    display: block;
+    margin: 2rem auto; 
+    max-width: 100%;   
+    height: auto;
+  }
+
+@media screen and (min-width: 768px) {
+    .columns {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .column {
+        width: 50%;
+    }
 }
 
 .box {
