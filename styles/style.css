@@ -346,3 +346,11 @@ header hr {
     opacity: 1;
   }
 }
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
