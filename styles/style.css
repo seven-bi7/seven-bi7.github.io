@@ -215,8 +215,8 @@ header hr {
 }
 
 .text p {
-    margin-left: var(--fw-padding);
-    margin-right: var(--fw-padding);
+    /* margin-left: var(--fw-padding); */
+    /* margin-right: var(--fw-padding); */
     font-family: 'Poppins';
     font-weight: 500;
     font-size: 16px;
