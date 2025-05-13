@@ -12,6 +12,7 @@
  */
 
 /*
+  blink-2
   shadow-drop-2-center
   slide-in-left
   slide-in-right
@@ -20,6 +21,31 @@
   slide-in-blurred-left
   swing-in-right-fwd
 */
+
+@keyframes blink-2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 .shadow-drop-2-center {
 	animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

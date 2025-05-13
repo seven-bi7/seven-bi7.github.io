@@ -204,6 +204,47 @@ header hr {
     }
 }
 
+.text h3 {
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    font-family: 'Anton';
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 1.6;
+    color: white;
+}
+
+.text p {
+    margin-left: var(--fw-padding);
+    margin-right: var(--fw-padding);
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+.text img {
+    display: block;
+    margin: 2rem auto auto auto; 
+    max-width: 100%;   
+    height: auto;
+  }
+
+@media screen and (min-width: 768px) {
+    .columns {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .column {
+        width: 50%;
+    }
+}
+
 .box {
     font-family: 'Poppins';
     background-color: white;
@@ -211,8 +252,18 @@ header hr {
     border-radius: 3rem;
     --md-elevation-level: 3;
     padding: 0.5rem 2rem;
-    margin: 2rem auto 2rem auto;
+    margin: 3rem auto 3rem auto;
     max-width: 768px;
+}
+
+.conclusion-b {
+    font-family: 'Poppins';
+    position: relative;
+    border-radius: 3rem;
+    --md-elevation-level: 3;
+    padding: 0.5rem 2rem;
+    margin: 3rem auto 3rem auto;
+    max-width: 788px;
 }
 
 .box img {
@@ -221,8 +272,77 @@ header hr {
     border-radius: 2rem;
 }
 
+.conclusion-t {
+    font-family: 'Anton';
+    color: white;
+    width: 100%;
+    font-size: 2.1rem;
+}
+
+.conclusion-p {
+    font-family: 'poppins';
+    color: white;
+    font-size: 1.5;
+}
+
 @media screen and (max-width: 768px){
     .box{
         margin: 2rem 1rem 2rem 1rem;
     }
+    
+    .conclusion-t {
+        font-size: 1.5rem;
+    }
+
+    .conclusion-p {
+        font-size: 0.7rem;
+    }
+}
+
+#torna-su {
+    --tooltip-animation: blink-out 0.7s both;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#torna-su:hover {
+    --tooltip-animation: blink-2 0.7s both;
+}
+
+#torna-su md-icon {
+    color:white;
+    transform: scale(3);
+    padding: 1rem 0;
+    margin: auto auto;
+}
+
+#tooltip {
+    opacity: 0;
+    animation: var(--tooltip-animation);
+    font-family: 'Poppins';
+    margin: auto auto 2rem auto;
+    background-color: white;
+    color: black;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    height: fit-content;
+}
+
+@media screen and (max-width: 768px) {
+    #torna-su {
+        --tooltip-animation: opacity 3s both infinite;
+    }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
