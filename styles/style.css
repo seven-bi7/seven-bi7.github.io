@@ -15,10 +15,193 @@
 
 :root {
     --custom-blue: rgb(6, 9, 36);
+    font-family: 'Poppins', sans-serif;
+    --fw-padding: 3rem;
+    --cw-padding: 3rem;
+    --grid-padding: 2rem;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--custom-blue);
+}
+  
+.first-view {
+    display: flex;
+    flex-direction: column;
 }
 
-body {
+.hero {
+    background-image: url('../images/intro_bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 3rem;
+}
+
+header {
+    margin: var(--fw-padding);
+    color: white;
+    padding: 0; 
+}
+
+header h1 {
+    margin: 0; 
+    font-size: 3rem;
+    font-weight: 500;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+header hr {
+    border: 0;
+    height: 5px;
+    margin-top: -1rem;
+    background-color: #ddd;
+}
+
+.intro-section {
+    margin: 8rem var(--fw-padding) 2rem var(--fw-padding);
+    color: white;
+}
+
+.intro-section h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 5rem;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    margin-bottom: 1rem;
+    padding-top: 10rem;
+}
+
+.intro-section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: xx-large;
+    line-height: 1.3;
+    margin-bottom: 5rem;
+}
+
+.white-divider {
+    border: none;
+    height: 3rem;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+}
+
+
+.text {
     background-color: var(--custom-blue);
+    padding: var(--fw-padding);
+    color: white;
+}
+
+.text h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+    padding-left: 11rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    padding-left: 11rem;
+    padding-right: 11rem;
+    margin-bottom: 1.5rem;
+}
+
+.text img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.subtitle {
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem; 
+    margin-left: var(--fw-padding); 
+    margin-right: var(--fw-padding); 
+    text-align: center; 
+    padding-top: 2rem;
+    letter-spacing: 0.02em;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    header {
+        margin: 2rem;
+    }
+
+    header h1 {
+        padding-top: 0; 
+        font-size: 2rem;
+    }
+
+    .intro-section {
+        margin: 4rem 2rem 1rem 2rem;
+    }
+
+    .intro-section h2 {
+        font-size: 2.5rem;
+        padding-top: 5rem;
+    }
+
+    .intro-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .text {
+        padding: 2rem;
+    }
+
+    .text h3 {
+        font-size: 1.8rem;
+        padding-left: 0;
+    }
+
+    .text p {
+        font-size: 0.95rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .subtitle {
+        font-size: 1.8rem; 
+        text-align: left; 
+        margin-left: 2.5rem; 
+        margin-right: var(--fw-padding); 
+        padding-top: 0;
+    }
+
+    .white-divider {
+        height: 2rem;
+    }
+}
+
+/*-------------------------------------------*/
+
+@media screen and (min-width: 768px) {
+    .columns {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .column {
+        width: 50%;
+    }
 }
 
 .box {
