@@ -1,17 +1,237 @@
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Medium.woff2') format('woff2');
+    font-family: 'Helvetica Neue Bold Italic';
+    src: url('../fonts/helvetica-neue-5/HelveticaNeueBoldItalic.otf');
 }
 
 @font-face {
-    font-family: 'horizon';
-    src: url('../fonts/horizon.woff2') format('woff2');
+    font-family: 'Helvetica Neue Italic';
+    src: url('../fonts/helvetica-neue-5/HelveticaNeueItalic.ttf');
 }
 
 @font-face {
-    font-family: 'anton';
-    src: url('../fonts/Anton.woff2') format('woff2');
+    font-family: 'Helvetica Neue Bold';
+    src: url('../fonts/helvetica-neue-5/HelveticaNeueBold.otf');
 }
+
+/*          STYLESHEET PART 1             */
+
+:root {
+    --bg-color: #333250;
+    --subtitle-color: #8584d5;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Roboto' !important;
+    font-weight: '300' !important;
+}
+
+/*  NAVBAR */
+
+.navbar {
+    background-color: var(--bg-color) !important;
+}
+
+.navbar-burger {
+    color:white !important;
+}
+
+/*  IMMAGINE MULTICOLORE TITOLO */
+
+#img-titolo {
+    margin: 0 1.5rem;
+    width: calc(100% - 3rem);
+}
+
+@media screen and (min-width: 769px) {
+    #img-titolo {
+        margin: 0 4rem;
+        width: calc(100% - 8rem);
+    }
+}
+
+/*  CITAZIONE A. E. */
+
+#citazione-AE {
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+#citazione-AE .vertical-line {
+    background-color: white;
+    width: 2px;
+}
+
+#citazione-AE .citazione {
+    color: white;
+    padding: 0 0 0 1rem;
+}
+
+#citazione-AE .citazione h2 {
+    font-family: 'Helvetica Neue Bold Italic';
+    font-size: 1.4rem;
+}
+
+#citazione-AE .citazione h6 {
+    font-family: 'Helvetica Neue Italic';
+    color: #9999a8;
+}
+
+@media screen and (min-width: 769px) {
+    #citazione-AE {
+        padding: 2rem 4.5rem;
+    }
+
+    #citazione-AE .citazione {
+        padding: 0 0 0 3.5rem;
+    }
+
+    #citazione-AE .citazione h2 {
+        font-size: 5rem;
+        line-height: 1.2;
+    }
+
+    #citazione-AE .citazione h6 {
+        font-size: 2.2rem;
+    }
+}
+
+/*  PARAGRAFO A. E. */
+
+#paragrafo-AE {
+    color: white;
+    padding: 0 1.5rem;
+}
+
+#paragrafo-AE h3 {
+    font-family: 'Helvetica Neue Bold Italic';
+    color: var(--subtitle-color);
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+#paragrafo-AE h4 {
+    font-family: 'Helvetica Neue Bold';
+    /* font-size: 1.2rem; */
+    line-height: 1.4;
+}
+
+#paragrafo-AE strong {
+    color: white;
+}
+
+@media screen and (min-width: 769px) {
+    #paragrafo-AE {
+        padding: 0 4.5rem;
+    }
+
+    #paragrafo-AE h3 {
+        font-size: 3.8rem;
+    }
+
+    #paragrafo-AE p {
+        font-size: 1.8rem;
+    }
+}
+
+/*  TITOLO CARDS */
+
+#titolo-cards {
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+#titolo-cards .vertical-line {
+    background-color: white;
+    width: 2px;
+}
+
+#titolo-cards .titolo-sottotitolo {
+    color: white;
+    padding: 0 0 0 1rem;
+}
+
+#titolo-cards .titolo-sottotitolo h2 {
+    font-family: 'Helvetica Neue Bold';
+    font-size: 2rem;
+    color: var(--subtitle-color);
+}
+
+#titolo-cards .titolo-sottotitolo h3 {
+    font-family: 'Helvetica Neue Bold';
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+    #titolo-cards {
+        padding: 6rem 4.5rem;
+    }
+
+    #titolo-cards .titolo-sottotitolo {
+        padding: 0 0 0 3.5rem;
+    }
+
+    #titolo-cards .titolo-sottotitolo h2 {
+        font-size: 7rem;
+        line-height: 1;
+    }
+
+    #titolo-cards .titolo-sottotitolo h3 {
+        font-size: 7rem;
+        line-height: 1;
+    }
+}
+
+/*  CARDS */
+
+#cards {
+    margin-bottom: 2rem;
+}
+
+#cards .slider {
+    animation: slide-left infinite ease-in-out 20s;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+#cards .slider img {
+    width: 40vw;
+    height: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    #cards {
+        margin-bottom: 4rem;
+    }
+
+    #cards .slider {
+        gap: 2rem;
+    }
+}
+
+/* Keyframes to create the sliding effect */
+@keyframes slide-left {
+    from {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(calc(-100% + 100vw));
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+/*          STYLESHEET TEMPLATE             
 
 :root {
     --custom-blue: rgb(6, 9, 36);
@@ -188,7 +408,7 @@ header hr {
     }
 }
 
-/*-------------------------------------------*/
+/*-------------------------------------------
 
 @media screen and (min-width: 768px) {
     .columns {
@@ -216,7 +436,7 @@ header hr {
 
 .text p {
     /* margin-left: var(--fw-padding); */
-    /* margin-right: var(--fw-padding); */
+/* margin-right: var(--fw-padding); 
     font-family: 'Poppins';
     font-weight: 500;
     font-size: 16px;
@@ -353,4 +573,4 @@ header hr {
 
 .green {
     color: green;
-}
+} */

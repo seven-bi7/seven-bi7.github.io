@@ -1,192 +1,181 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/animista.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
-    <title>7bit+1</title>
-  </head>
-  <body>
-    <div class="first-view">
 
-      <section class="hero">
-        <header>
-          <h1>7bit+1</h1>
-          <hr />
-        </header>
-  
-        <div class="intro-section">
-          <h2>Tooltips:</h2>
-          <h3>
-            Cosa sono e perché <br />
-            pongono problemi tra le <br />
-            versioni desktop e mobile
-          </h3>
-        </div>
-      </section>
-  
-      <div class="white-divider"></div>
-  
-      <section class="text">
-        <h3>Cosa sono i tooltips</h3>
-        <p>
-          I tooltips sono piccoli elementi informativi che appaiono quando l’utente interagisce con un componente dell’interfaccia, solitamente per fornire chiarimenti o dettagli aggiuntivi senza ingombrare lo spazio visivo. Nelle versioni desktop, i tooltip vengono attivati comunemente tramite il passaggio del mouse (hover), offrendo un’interazione discreta e contestuale.
-        </p>
-        <p>
-          Tuttavia, questa modalità non è direttamente trasferibile ai dispositivi mobili, dove l’hover non esiste e le interazioni si basano sul tocco (tap). Questo cambiamento comporta problemi di usabilità, visibilità e accessibilità: i tooltip rischiano di essere attivati in modo non intenzionale o, al contrario, di non essere mai scoperti. Inoltre, lo spazio ridotto degli schermi mobili richiede soluzioni più progettate e adattive, come trasformare i tooltip in popover persistenti o modali semplificati.
-        </p>
-        <p>
-          Questa differenza di paradigma rende la conversione desktop-mobile dei tooltip una sfida cruciale per chi progetta interfacce responsive ed inclusive.
-        </p>
-        <img src="images/tooltip.png" alt="Tooltip design button" />
-      </section>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <title>7bit+1</title>
 
-  <h3 class="subtitle">Tipologie di tooltip e pattern di interazione</h3>
+  <script type="module">
+    window.addEventListener('DOMContentLoaded', () => {
+      const request = new Request("./testi.json", {
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-  <!----------------------------------------------------------------->
-  
-    <script src="scripts/bundle.js"></script>
-    <div class="box">
-      <md-elevation></md-elevation>
-      <h2>Tap to reveal</h2>
-      <p>L’utente tocca un'icona informativa (ⓘ o ?) per attivare un piccolo box che
-        mostra il messaggio.<br><br>
-        <div class="green">Pro:</div>
-        <ul>
-          <li>intuitivo e familiare</li>
-          <li>controllato dall’utente (non intrusivo)</li>
-        </ul>
-        <div class="red">Contro:</div>
-        <ul>
-          <li>richiede spazio per l’icona</li>
-          <li>necessita di un’interazione in più</li>
-        </ul>
-      </p>
-      <img src="images/img_card1.gif" alt="tap to reveal tooltip gif">
+      let data, texts;
+      let lang = "ita"; // "ita": italiano, "eng": english
+      let response = fetch(request)
+        .then((response) => response.json())
+        .then((json) => {
+          data = json;
+          texts = data[lang];
+          write();
+        })
+        .catch(console.error);
+
+      // Elements to write text in
+      const nav1 = document.getElementById('nav-1');
+      const nav2 = document.getElementById('nav-2');
+      const nav3 = document.getElementById('nav-3');
+      const nav4 = document.getElementById('nav-4');
+      const nav5 = document.getElementById('nav-5');
+      const nav6 = document.getElementById('nav-6');
+      const cAE1 = document.getElementById('citazione-AE-1');
+      const pAE1 = document.getElementById('paragrafo-AE-1');
+      const pAE2 = document.getElementById('paragrafo-AE-2');
+      const pAE3 = document.getElementById('paragrafo-AE-3');
+      const pAE4 = document.getElementById('paragrafo-AE-4');
+      const tc1 = document.getElementById('titolo-cards-1');
+      const tc2 = document.getElementById('titolo-cards-2');
+
+      // function to write all texts
+      function write() {
+        const texts_nav = texts.nav;
+        nav1.innerHTML = texts_nav[1];
+        nav2.innerHTML = texts_nav[2];
+        nav3.innerHTML = texts_nav[3];
+        nav4.innerHTML = texts_nav[4];
+        nav5.innerHTML = texts_nav[5];
+        nav6.innerHTML = texts_nav[6];
+
+        cAE1.innerHTML = texts['citazione-AE-1'];
+
+        const texts_pAE = texts["paragrafo-AE"];
+        pAE1.innerHTML = texts_pAE["1"];
+        if (window.innerWidth > 768) {
+          pAE2.style.display = "none";
+          pAE3.innerHTML = texts_pAE["3_desktop"];
+          pAE4.innerHTML = texts_pAE["4_desktop"];
+        } else {
+          pAE2.innerHTML = texts_pAE["2"];
+          pAE3.innerHTML = texts_pAE["3_mobile"];
+        }
+
+        tc1.innerHTML = texts["titolo-cards-1"];
+        tc2.innerHTML = texts["titolo-cards-2"];
+      }
+
+      // change language button
+      document.getElementById('button-lang').addEventListener('click', () => {
+        lang = (lang == "ita" ? "eng" : "ita");
+        texts = data[lang];
+        write();
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <script src="scripts/nav.js"></script>
+  <!-- NAVBAR-->
+  <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item px-3" href="">
+        7bit+1
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-    <div class="box">
-      <md-elevation></md-elevation>
-      <h2>Long press</h2>
-      <p>Mantenendo il dito su un elemento, appare il tooltip.<br><br>
-        <div class="green">Pro:</div>
-        <ul>
-          <li>Non modifica il layout</li>
-          <li>Simula bene l’hover</li>
-        </ul>
-        <div class="red">Contro:</div>
-        <ul>
-          <li>Gesto non sempre noto</li>
-          <li>Può interferire con altre interazioni (es. selezione)</li>
-        </ul>
-      </p>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a id="nav-1" class="navbar-item" href="#titolo-cards"></a>
+        <a id="nav-2" class="navbar-item"></a>
+        <a id="nav-3" class="navbar-item"></a>
+        <a id="nav-4" class="navbar-item"></a>
+        <a id="nav-5" class="navbar-item"></a>
+        <a id="nav-6" class="navbar-item"></a>
+      </div>
+      <div class="navbar-end">
+        <a id="button-lang" class="navbar-item">
+          <strong>ITA/ENG</strong>
+        </a>
+      </div>
     </div>
-    <div class="box">
-      <md-elevation></md-elevation>
-      <h2>Tooltip inline (o espliciti)</h2>
-      <p>Le informazioni sono già visibili nella UI, ad esempio sotto un campo modulo o
-        accanto a un'icona.<br><br>
-        <div class="green">Pro:</div>
-        <ul>
-          <li>Nessuna interazione necessaria</li>
-          <li>Ottima accessibilità</li>
-        </ul>
-        <div class="red">Contro:</div>
-        <ul>
-          <li>Allunga visivamente la pagina</li>
-          <li>Potenzialmente ridondante con tooltip hover su desktop</li>
-        </ul>
-      </p>
-      <img src="images/img-card3.gif" alt="inline tooltip gif">
+  </nav>
+  <!-- IMMAGINE MULTICOLORE TITOLO -->
+  <img id="img-titolo" src="images/img1-p1.png" alt="titolo" />
+  <!-- CITAZIONE A. E. -->
+  <div id="citazione-AE">
+    <div class="vertical-line"></div>
+    <div class="citazione">
+      <h2 id="citazione-AE-1"></h2>
+      <h6>Albert Einstein, 1935</h6>
     </div>
-    <div class="box">
-      <md-elevation></md-elevation>
-      <h2>Popover contestuali / mini-modali</h2>
-      <p>Toccando un elemento si apre un popover fluttuante che mostra
-        contenuti più ricchi o azioni secondarie.<br><br>
-        <div class="green">Pro:</div>
-        <ul>
-          <li>Supporta contenuti articolati</li>
-          <li>Ben integrabile in flow complessi</li>
-        </ul>
-        <div class="red">Contro:</div>
-        <ul>
-          <li>Più invasivo</li>
-          <li>Rischia di rallentare la navigazione se abusato</li>
-        </ul>
-      </p>
-      <img src="images/img-card4.gif" alt="inline tooltip gif">
+  </div>
+  <!-- PARAGRAFO A. E. -->
+  <div id="paragrafo-AE">
+    <h3 id="paragrafo-AE-1"></h3>
+    <h4 id="paragrafo-AE-2"></h4>
+    <div class="columns">
+      <p id="paragrafo-AE-3" class="column is-half"></p>
+      <p id="paragrafo-AE-4" class="columm is-half"></p>
     </div>
-    <div class="box">
-      <md-elevation></md-elevation>
-      <h2>Tooltip per onboarding o guide interattive</h2>
-      <p>Tooltips temporanei che accompagnano l’
-        utente alla prima interazione o durante un tutorial guidato.<br><br>
-        <div class="green">Pro:</div>
-        <ul>
-          <li>Ottimi per l’apprendimento graduale</li>
-          <li>Spariscono dopo l’uso</li>
-        </ul>
-        <div class="red">Contro:</div>
-        <ul>
-          <li>Non riattivabili facilmente</li>
-          <li>L’utente potrebbe dimenticare ciò che ha visto</li>
-        </ul>
-      </p>
+  </div>
+  <!-- TITOLO CARDS -->
+  <div id="titolo-cards">
+    <div class="vertical-line"></div>
+    <div class="titolo-sottotitolo">
+      <h2 id="titolo-cards-1"></h2>
+      <h3 id="titolo-cards-2"></h3>
     </div>
-    <div class="box">
-      <md-elevation></md-elevation>
-      <h2>Microcopy integrati</h2>
-      <p>Brevi testi descrittivi direttamente inseriti accanto a bottoni, input o
-        label.<br><br>
-        <div class="green">Pro:</div>
-        <ul>
-          <li>Sempre presenti e accessibili</li>
-          <li>Migliora chiarezza e inclusività</li>
-        </ul>
-        <div class="red">Contro:</div>
-        <ul>
-          <li>Richiede scrittura UX efficace</li>
-          <li>Non adatto per spiegazioni lunghe</li>
-        </ul>
-      </p>
+  </div>
+  <!-- CARDS -->
+  <div id="cards">
+    <div class="slider">
+      <img src="images/card1-p1.png" alt="card1">
+      <img src="images/card2-p1.png" alt="card2">
+      <img src="images/card3-p1.png" alt="card3">
+      <img src="images/card4-p1.png" alt="card4">
+      <img src="images/card5-p1.png" alt="card5">
     </div>
-    <div class="box">
-      <md-elevation></md-elevation>
-      <h2>Feedback visivo contestuale</h2>
-      <p>Al tocco, un elemento visivo cambia stato (colore, forma, bordo) e
-        una breve descrizione compare vicino all’
-        area selezionata.<br><br>
-        <div class="green">Pro:</div>
-        <ul>
-          <li>Elegante e discreto</li>
-          <li>Ideale in UI moderne</li>
-        </ul>
-        <div class="red">Contro:</div>
-        <ul>
-          <li>Va progettato con cura per non disorientare</li>
-          <li>Potenziale rischio di overload visivo</li>
-        </ul>
-      </p>
-    </div>
-    <div class="conclusion-b">
-      <h2 class="conclusion-t">
-        I tooltips secondo 7bit+1
-      </h2>
-      <p class="conclusion-p">
-        Tra le varie soluzioni esplorate per adattare la funzionalità dei tooltip dall’ambiente desktop a quello mobile, le più efficaci risultano essere due strategie complementari: l’utilizzo progressivo di tooltip automatici e l’attivazione tramite long press. Introdurre l’interfaccia attraverso un breve tutorial guidato da tooltip che compaiono gradualmente nelle prime fasi di utilizzo dell’app permette agli utenti di familiarizzare con le principali funzionalità in modo fluido e non invasivo. Questo approccio aiuta a mantenere l’interfaccia pulita, senza icone o testi ridondanti, e rispetta le dinamiche tipiche dell’uso touch.
-        <br><br>
-        In aggiunta, i tooltip possono essere attivati automaticamente in momenti chiave dell’esperienza – come l’uso di funzioni complesse, l’accesso a nuove sezioni o il rilascio di feature inedite – offrendo un supporto contestuale mirato, senza richiedere azioni specifiche da parte dell’utente. Tuttavia, per garantire massima flessibilità, è utile affiancare a questi tooltip automatici la possibilità di richiamarli manualmente tramite long press: un gesto già noto agli utenti, che consente di ottenere ulteriori informazioni su un elemento in qualsiasi momento, solo quando desiderato.
-        <br><br>
-        L’integrazione di questi due metodi – automatico e volontario – consente di replicare l’esperienza dell’hover del desktop in modo adattivo e coerente con il mobile, unendo chiarezza, estetica e controllo dell’utente. Il risultato è un’interazione più narrativa e personalizzata, capace di migliorare l’usabilità complessiva e rafforzare l’engagement con l’app.
-      </p>
-    </div>
-    <div id="torna-su">
-      <div id="tooltip" class="blink-2">Torna su</div>
-      <md-icon onclick="window.scrollTo(0, 0);">expand_circle_up</md-icon>
-      <script src="scripts/tooltip.js"></script>
-    </div>
-  </body>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        /**
+         * Converts rem units to pixels based on the root font size.
+         * @param {number} rem - The value in rem units.
+         * @returns {number} The equivalent value in pixels.
+         */
+        function remToPx(rem) {
+          const rootFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
+          return rem * rootFontSize;
+        }
+        const slider = document.querySelector('.slider');
+        const images = document.querySelectorAll('.slider img');
+        const gap = remToPx(slider.style.gap);
+        console.log(gap);
+        let totalWidth = -gap * 0.6;
+
+        images.forEach((image) => {
+          totalWidth += image.width + gap;
+        })
+        slider.style.width = `${totalWidth}px`;
+      });
+    </script>
+  </div>
+  <!-- IMMAGINE GATTO STUDIOSO -->
+  <img id="img-titolo" src="images/img2-p1.png" alt="gatto studioso" />
+</body>
+
 </html>

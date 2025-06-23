@@ -1,0 +1,49 @@
+{
+    "ita": {
+        "nav": {
+            "1": "Nozioni Basse",
+            "2": "Cos'è l'Entanglement",
+            "3": "Spiegazione",
+            "4": "Il gatto di Schrödinger",
+            "5": "Storia",
+            "6": "Nozioni"
+        },
+
+        "citazione-AE-1": "&quot;Nessuna definizione <br>ragionevole di realtà <br>potrebbe permettere questo&quot;",
+
+        "paragrafo-AE": {
+            "1": "Lo sapevi che... ?",
+            "2": "Albert Einstein definì l'entanglement <br>&quot;spooky action at a distance&quot;",
+            "3_mobile": "Albert Einstein definì l&apos;entanglement &quot;spooky action at a distance&quot; (azione spettrale a distanza) perché trovava inquietante che due particelle potessero mostrare risultati perfettamente correlati, anche se separate da enormi distanze, senza alcun segnale che viaggiasse tra loro <br><br>Secondo la meccanica quantistica, però, una volta che due particelle sono entangled, le misure su una determinano istantaneamente lo stato dell&apos;altra, indipendentemente dallo spazio che le separa. <br><br>Einstein pensava che ci dovesse essere qualche <strong>&quot;variabile nascosta&quot;</strong> a spiegare tutto. Oggi, invece, gli esperimenti lo smentiscono sistematicamente: l&apos;entanglement è reale, ed è uno degli aspetti più misteriosi e verificabili della fisica moderna.",
+            "3_desktop": "Albert Einstein definì l&apos;entanglement &quot;spooky action at a distance&quot; (azione spettrale a distanza) perché trovava inquietante che due particelle potessero mostrare risultati perfettamente correlati, anche se separate da enormi distanze, senza alcun segnale che viaggiasse tra loro. Secondo la meccanica quantistica, però, una volta che due particelle sono entangled, le misure su",
+            "4_desktop": "una determinano istantaneamente lo stato dell&apos;altra, indipendentemente dallo spazio che le separa. Einstein pensava che ci dovesse essere qualche &quot;variabile nascosta&quot; a spiegare tutto. Oggi, invece, gli esperimenti lo smentiscono sistematicamente: l&apos;entanglement è reale, ed è uno degli aspetti più misteriosi e verificabili della fisica moderna."
+        },
+
+        "titolo-cards-1": "Nozioni",
+        "titolo-cards-2": "Base"
+    },
+
+    "eng": {
+        "nav": {
+            "1": "Basic Concepts",
+            "2": "What is Entanglement",
+            "3": "Explanation",
+            "4": "Schrödinger's Cat",
+            "5": "History",
+            "6": "Concepts"
+        },
+
+        "citazione-AE-1": "&quot;No reasonable  <br>definition of reality <br>could allow this&quot;",
+
+        "paragrafo-AE": {
+            "1": "Did you know... ?",
+            "2": "Albert Einstein defined entanglement <br>&quot;spooky action at a distance&quot;",
+            "3_mobile": "Albert Einstein defined entanglement &quot;spooky action at a distance&quot; (spooky action at a distance) because he found it unsettling that two particles could show perfectly correlated results, even if separated by vast distances, without any signal traveling between them <br><br>According to quantum mechanics, however, once two particles are entangled, measurements on one instantly determine the state of the other, regardless of the space separating them. <br><br>Einstein thought there must be some &quot;hidden variable&quot; to explain everything. Today, however, experiments systematically refute this: entanglement is real, and it is one of the most mysterious and verifiable aspects of modern physics.",
+            "3_desktop": "Albert Einstein defined entanglement &quot;spooky action at a distance&quot; (spooky action at a distance) because he found it unsettling that two particles could show perfectly correlated results, even if separated by vast distances, without any signal traveling between them. According to quantum mechanics, however, once two particles are entangled, measurements on one",
+            "4_desktop": "instantly determine the state of the other, regardless of the space separating them. Einstein thought there must be some &quot;hidden variable&quot; to explain everything. Today, however, experiments systematically refute this: entanglement is real, and it is one of the most mysterious and verificable aspects of modern physics."
+        },
+
+        "titolo-cards-1": "Concepts",
+        "titolo-cards-2": "Basics"
+    }
+}
