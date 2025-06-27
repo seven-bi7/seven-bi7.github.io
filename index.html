@@ -144,38 +144,78 @@
   <!-- CARDS -->
   <div id="cards">
     <div class="slider">
-      <img src="images/card1-p1.png" alt="card1">
-      <img src="images/card2-p1.png" alt="card2">
-      <img src="images/card3-p1.png" alt="card3">
-      <img src="images/card4-p1.png" alt="card4">
-      <img src="images/card5-p1.png" alt="card5">
+      <div id="card-1" class="card">
+        <h3 class="card-title">Che cos'è un atomo ?</h3>
+        <h6 class="def">(dal greco átouoç átomos: indivisibile)</h6>
+        <h4 class="card-subtitle">Ogni cosa nel mondo è fatta di atomi, ¡ "mattoncini" fondamentali della materia.</h4>
+        <p class="card-p">Un atomo è una particella piccolissima, formata da un nucleo centrale (composto da protoni e neutroni) e da
+          uno o più elettroni che ruotano attorno.
+          Anche se minuscoli, gli atomi determinano tutte le proprietà della materia e quando andiamo a studiarli da
+          vicino iniziano a comportarsi in modi sorprendenti.</p>
+      </div>
+      <div id="card-2" class="card">
+        <h3 class="card-title">Il ruolo dell'osservatore</h3>
+        <h4 class="card-subtitle">In fisica quantistica, osservare una particella non è un atto passivo: cambia ciò che accade.</h4>
+        <p class="card-p">Finché una particella non viene osservata o misurata, il suo stato rimane indefinito o meglio, è una somma di
+          tutti i possibili stati. Quando interveniamo con una misura, facciamo "collassare" questa incertezza in un
+          solo risultato. È come se la realtà si definisse solo nel momento in cui la guardiamo.</p>
+      </div>
+      <div id="card-3" class="card">
+        <h3 class="card-title">Il principio di sovrapposizione</h3>
+        <h4 class="card-subtitle">Una particella quantistica può trovarsi in più stati contemporaneamente, fino a quando non la osserviamo.
+        </h4>
+        <p class="card-p">Immagina di lanciare una moneta.
+          Prima che cada, non sai se sarà testa o croce. Ma in quantistica, prima di
+          "guardare", è entrambe le cose allo stesso tempo. È questo il significato di
+          "sovrapposizione": una particella può essere in più stati o luoghi contemporaneamente.
+          Solo l'osservazione la costringe a scegliere uno stato preciso.</p>
+      </div>
+      <div id="card-4" class="card">
+        <h3 class="card-title">Cos'è uno stato quantico?</h3>
+        <h4 class="card-subtitle">Lo stato quantico descrive tutto ciò che sappiamo su una particella: posizione, energia, direzione...</h4>
+        <p class="card-p">In fisica classica, uno stato è un numero preciso: un oggetto è qui, si muove così, ha questa energia.
+          Ma nel mondo quantistico, uno stato è rappresentato da una funzione d'onda, una descrizione matematica che
+          contiene tutte le possibili informazioni su dove si trova e come si comporta la particella.
+          È come un "menu di possibilità" che si aggiorna quando misuriamo qualcosa.</p>
+      </div>
+      <div id="card-5" class="card">
+        <h3 class="card-title">La velocità della luce</h3>
+        <h6 class="def">(La velocità della luce è: 299.792.458 metri al secondo)</h6>
+        <h4 class="card-subtitle">L'entanglement sembra muoversi più veloce della luce.</h4>
+        <p class="card-p">La teoria della relatività di Einstein ci dice che nessuna informazione può viaggiare più veloce della luce.
+          Eppure, quando due particelle sono entangled, la misura di una influenza istantaneamente l'altra, anche a
+          distanze enormi. Non c'è trasmissione visibile, ma un legame profondo tra i loro stati. Questo ha fatto
+          discutere per decenni i fisici: Einstein lo chiamava <strong>"azione fantasma a distanza"</strong>.</p>
+      </div>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        /**
-         * Converts rem units to pixels based on the root font size.
-         * @param {number} rem - The value in rem units.
-         * @returns {number} The equivalent value in pixels.
-         */
-        function remToPx(rem) {
-          const rootFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
-          return rem * rootFontSize;
-        }
-        const slider = document.querySelector('.slider');
-        const images = document.querySelectorAll('.slider img');
-        const gap = remToPx(slider.style.gap);
-        console.log(gap);
-        let totalWidth = -gap * 0.6;
-
-        images.forEach((image) => {
-          totalWidth += image.width + gap;
-        })
-        slider.style.width = `${totalWidth}px`;
-      });
-    </script>
   </div>
   <!-- IMMAGINE GATTO STUDIOSO -->
   <img id="img-titolo" src="images/img2-p1.png" alt="gatto studioso" />
+  <!-- GATTO SCHRODINGER -->
+  <div id="gatto-schrodinger">
+    <div class="sopra">
+      <img class="img-sopra" src="images/GSp1.png" />
+    </div>
+    <div class="sotto">
+      <div class="container">
+        <div class="vertical-line"></div>
+        <div class="titolo-sottotitolo">
+          <h2 id="titolo-gs-1">Il gatto di</h2>
+          <h3 id="titolo-gs-2">Schrodinger</h3>
+        </div>
+      </div>
+      <p>
+        Il paradosso "Il gatto di Schrödinger" è un esperimento mentale ideato nel 1935 dal fisico teorico Erwin
+        Schrödinger per illustrare quanto siano strane le implicazioni della meccanica quantistica. Si immagina un gatto
+        chiuso in una scatola insieme a un meccanismo letale attivato dal decadimento di un atomo radioattivo: se
+        l'atomo decade, il veleno si libera e il gatto muore; se non decade, il gatto resta vivo. Secondo la fisica
+        quantistica, finché non si apre la scatola per osservare, l'atomo è in una sovrapposizione di stati, quindi
+        anche il gatto è sia vivo che e morto.
+        Schrödinger usò questo paradosso per criticare l'idea che un sistema resti in uno stato indefinito finché non
+        viene osservato, mostrando i limiti della teoria quantistica.
+      </p>
+    </div>
+  </div>
 </body>
 
 </html>

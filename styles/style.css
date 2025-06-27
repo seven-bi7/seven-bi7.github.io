@@ -18,6 +18,7 @@
 :root {
     --bg-color: #333250;
     --subtitle-color: #8584d5;
+    --cards-title-color: rgb(98, 180, 172);
     scroll-behavior: smooth;
 }
 
@@ -194,16 +195,58 @@ body {
 }
 
 #cards .slider {
-    animation: slide-left infinite ease-in-out 20s;
+    margin: 0 2rem 0 0;
+    overflow-x: scroll;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 0.5rem;
+}
+
+#cards .slider::-webkit-scrollbar {
+  display: none;
 }
 
 #cards .slider img {
     width: 40vw;
     height: 100%;
+}
+
+#cards .card {
+    margin: 0 0 0 1rem;
+    min-width: 55vw;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 1rem;
+    background-color: var(--bg-color);
+}
+
+#cards .card h6 {
+    font-size: 0.6rem;
+    color: black;
+    padding: 0.5rem 1rem 0 1rem;
+    line-height: 1.2rem;
+}
+
+#cards .card h3 {
+    font-size: 1rem;
+    color: var(--cards-title-color);
+    padding: 1rem 1rem 0 1rem;
+    line-height: 1.2rem;
+}
+
+#cards .card h4 {
+    padding: 0.5rem 1rem;
+    color: black;
+    font-size: 0.7rem;
+    font-weight: bold;
+    line-height: 1rem;
+}
+
+#cards .card p {
+    padding: 0 1rem 1rem 1rem;
+    color: var(--subtitle-color);
+    font-size: 0.7rem;
+    line-height: 1.2rem;
 }
 
 @media screen and (min-width: 769px) {
@@ -214,20 +257,120 @@ body {
     #cards .slider {
         gap: 2rem;
     }
+
+
+    #cards .card {
+        margin-left: 2rem;
+        min-width: 35vw;
+        border-radius: 2rem;
+    }
+
+    #cards .card h3 {
+        font-size: 2.5rem;
+        padding: 2rem 2rem 0 2rem;
+        line-height: 2.5rem;
+    }
+
+    #cards .card h6 {
+        font-size: 1rem;
+        padding: 1rem 2rem 0 2rem;
+    }
+
+    #cards .card h4 {
+        padding: 1.5rem 2rem;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
+
+    #cards .card p {
+        padding: 0 2rem 2rem 2rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
 }
 
-/* Keyframes to create the sliding effect */
-@keyframes slide-left {
-    from {
-        transform: translateX(0%);
+/* GATTO SCHRODINGER */
+
+#gatto-schrodinger .sopra {
+    width: 100%;
+    height: 35vw;
+    overflow: visible;
+}
+
+#gatto-schrodinger .img-sopra {
+    width: 100%;
+    height: auto;
+}
+
+#gatto-schrodinger .sotto {
+    width: 100%;
+    min-height: 300px;
+    background-image: url("../images/GSp2.png");
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    padding: 1.5rem 20% 6rem 20%;
+}
+
+#gatto-schrodinger .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+#gatto-schrodinger .vertical-line {
+    background-color: white;
+    width: 2px;
+}
+
+#gatto-schrodinger .titolo-sottotitolo {
+    color: white;
+    padding: 0 0 0 1rem;
+}
+
+#gatto-schrodinger .titolo-sottotitolo h2 {
+    font-family: 'Helvetica Neue Bold';
+    font-size: 2rem;
+}
+
+#gatto-schrodinger .titolo-sottotitolo h3 {
+    font-family: 'Helvetica Neue Bold';
+    font-size: 2rem;
+    color: var(--subtitle-color);
+}
+
+#gatto-schrodinger p {
+    padding-top: 1rem;
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+@media screen and (min-width: 769px) {
+    #gatto-schrodinger .sotto {
+        padding: 4rem 20% 11rem 20%;
     }
 
-    50% {
-        transform: translateX(calc(-100% + 100vw));
+    #gatto-schrodinger .titolo-sottotitolo {
+        padding: 0 0 0 3.5rem;
     }
 
-    to {
-        transform: translateX(0%);
+    #gatto-schrodinger .titolo-sottotitolo h2 {
+        font-size: 7rem;
+        line-height: 1;
+    }
+
+    #gatto-schrodinger .titolo-sottotitolo h3 {
+        font-size: 7rem;
+        line-height: 1;
+    }
+
+    #gatto-schrodinger p {
+        padding-top: 2rem;
+        color: white;
+        font-size: 1.8rem;
+        line-height: 1.4;
     }
 }
 
