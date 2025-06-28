@@ -14,7 +14,7 @@
 
   <script type="module">
     window.addEventListener('DOMContentLoaded', () => {
-      const request = new Request("./testi.json", {
+      const request = new Request("testi.json", {
         headers: {
           'Accept': 'application/json'
         }
@@ -27,6 +27,7 @@
         .then((json) => {
           data = json;
           texts = data[lang];
+          console.log(data);
           write();
           writeImages();
         })
@@ -85,25 +86,23 @@
 
       // function to write all texts
       function write() {
-        const texts_nav = texts.nav;
-        nav1.innerHTML = texts_nav[1];
-        nav2.innerHTML = texts_nav[2];
-        nav3.innerHTML = texts_nav[3];
-        nav4.innerHTML = texts_nav[4];
-        nav5.innerHTML = texts_nav[5];
-        nav6.innerHTML = texts_nav[6];
+        nav1.innerHTML = texts["nav-1"];
+        nav2.innerHTML = texts["nav-2"];
+        nav3.innerHTML = texts["nav-3"];
+        nav4.innerHTML = texts["nav-4"];
+        nav5.innerHTML = texts["nav-5"];
+        nav6.innerHTML = texts["nav-6"];
 
-        cAE1.innerHTML = texts['citazione-AE-1'];
+        cAE1.innerHTML = texts['citazione-AE'];
 
-        const texts_pAE = texts["paragrafo-AE"];
-        pAE1.innerHTML = texts_pAE["1"];
+        pAE1.innerHTML = texts["paragrafo-AE-1"];
         if (window.innerWidth > 768) {
           pAE2.style.display = "none";
-          pAE3.innerHTML = texts_pAE["3_desktop"];
-          pAE4.innerHTML = texts_pAE["4_desktop"];
+          pAE3.innerHTML = texts["paragrafo-AE-3_desktop"];
+          pAE4.innerHTML = texts["paragrafo-AE-4_desktop"];
         } else {
-          pAE2.innerHTML = texts_pAE["2"];
-          pAE3.innerHTML = texts_pAE["3_mobile"];
+          pAE2.innerHTML = texts["paragrafo-AE-2"];
+          pAE3.innerHTML = texts["paragrafo-AE-3_mobile"];
         }
 
         tc1.innerHTML = texts["titolo-cards-1"];
