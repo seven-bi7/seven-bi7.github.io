@@ -28,6 +28,7 @@
           data = json;
           texts = data[lang];
           write();
+          writeImages();
         })
         .catch(console.error);
 
@@ -45,6 +46,42 @@
       const pAE4 = document.getElementById('paragrafo-AE-4');
       const tc1 = document.getElementById('titolo-cards-1');
       const tc2 = document.getElementById('titolo-cards-2');
+      const whatIsTitolo = document.getElementById('what-is-titolo');
+      const whatIsSottotitolo = document.getElementById('what-is-sottotitolo');
+      const whatIsParagrafo1 = document.getElementById('what-is-paragrafo-1');
+      const whatIsParagrafo2 = document.getElementById('what-is-paragrafo-2');
+      const whatIsParagrafo3 = document.getElementById('what-is-paragrafo-3');
+      const whatIsParagrafo4 = document.getElementById('what-is-paragrafo-4');
+      const AAcitazione = document.getElementById('AA-citazione');
+      const AAtesto = document.getElementById('AA-testo');
+      const spiegazioneTitolo = document.getElementById('spiegazione-titolo');
+      const spiegazioneParagrafo1 = document.getElementById('spiegazione-paragrafo-1');
+      const spiegazioneParagrafo2 = document.getElementById('spiegazione-paragrafo-2');
+      const spiegazioneParagrafo3 = document.getElementById('spiegazione-paragrafo-3');
+      const spiegazioneParagrafo4 = document.getElementById('spiegazione-paragrafo-4');
+      const gattoSTitolo = document.getElementById('gattoS-titolo');
+      const gattoSSottotitolo = document.getElementById('gattoS-sottotitolo');
+      const gattoSParagrafo = document.getElementById('gattoS-paragrafo');
+      const storiaTitolo = document.getElementById('storia-titolo');
+      const storiaSottotitolo = document.getElementById('storia-sottotitolo');
+      const storia1935Titolo = document.getElementById('storia-1935-titolo');
+      const storia1935Paragrafo = document.getElementById('storia-1935-paragrafo');
+      const storia1935TitoloBis = document.getElementById('storia-1935-titolo-bis');
+      const storia1935ParagrafoBis = document.getElementById('storia-1935-paragrafo-bis');
+      const storia1964Titolo = document.getElementById('storia-1964-titolo');
+      const storia1964Paragrafo = document.getElementById('storia-1964-paragrafo');
+      const storia1981Titolo = document.getElementById('storia-1981-titolo');
+      const storia1981Paragrafo = document.getElementById('storia-1981-paragrafo');
+      const storia2000Titolo = document.getElementById('storia-2000-titolo');
+      const storia2000Paragrafo = document.getElementById('storia-2000-paragrafo');
+      const storia2022Titolo = document.getElementById('storia-2022-titolo');
+      const storia2022Paragrafo = document.getElementById('storia-2022-paragrafo');
+      const notizieTitolo = document.getElementById('notizie-titolo');
+      const notizieSottotitolo = document.getElementById('notizie-sottotitolo');
+      const notizieParagrafo = document.getElementById('notizie-paragrafo');
+      const physParagrafo = document.getElementById('phys-paragrafo');
+      const techExploristParagrafo = document.getElementById('tech-explorist-paragrafo');
+      const quantumInsiderParagrafo = document.getElementById('quantum-insider-paragrafo');
 
       // function to write all texts
       function write() {
@@ -71,6 +108,66 @@
 
         tc1.innerHTML = texts["titolo-cards-1"];
         tc2.innerHTML = texts["titolo-cards-2"];
+
+        // What is entanglement section
+        whatIsTitolo.innerHTML = texts['what-is-titolo'];
+        whatIsSottotitolo.innerHTML = texts['what-is-sottotitolo'];
+        whatIsParagrafo1.innerHTML = texts['what-is-paragrafo-1'];
+        whatIsParagrafo2.innerHTML = texts['what-is-paragrafo-2'];
+        whatIsParagrafo3.innerHTML = texts['what-is-paragrafo-3'];
+        whatIsParagrafo4.innerHTML = texts['what-is-paragrafo-4'];
+
+        // AA citation and text
+        AAcitazione.innerHTML = texts['AA-citazione'];
+        AAtesto.innerHTML = texts['AA-testo'];
+
+        // Explanation section
+        spiegazioneTitolo.innerHTML = texts['spiegazione-titolo'];
+        spiegazioneParagrafo1.innerHTML = texts['spiegazione-paragrafo-1'];
+        spiegazioneParagrafo2.innerHTML = texts['spiegazione-paragrafo-2'];
+        spiegazioneParagrafo3.innerHTML = texts['spiegazione-paragrafo-3'];
+        spiegazioneParagrafo4.innerHTML = texts['spiegazione-paragrafo-4'];
+
+        // Schrödinger's cat section
+        gattoSTitolo.innerHTML = texts['gattoS-titolo'];
+        gattoSSottotitolo.innerHTML = texts['gattoS-sottotitolo'];
+        gattoSParagrafo.innerHTML = texts['gattoS-paragrafo'];
+
+        // History section
+        storiaTitolo.innerHTML = texts['storia-titolo'];
+        storiaSottotitolo.innerHTML = texts['storia-sottotitolo'];
+        storia1935Titolo.innerHTML = texts['storia-1935-titolo'];
+        storia1935Paragrafo.innerHTML = texts['storia-1935-paragrafo'];
+        storia1935TitoloBis.innerHTML = texts['storia-1935-titolo-bis'];
+        storia1935ParagrafoBis.innerHTML = texts['storia-1935-paragrafo-bis'];
+        storia1964Titolo.innerHTML = texts['storia-1964-titolo'];
+        storia1964Paragrafo.innerHTML = texts['storia-1964-paragrafo'];
+        storia1981Titolo.innerHTML = texts['storia-1981-titolo'];
+        storia1981Paragrafo.innerHTML = texts['storia-1981-paragrafo'];
+        storia2000Titolo.innerHTML = texts['storia-2000-titolo'];
+        storia2000Paragrafo.innerHTML = texts['storia-2000-paragrafo'];
+        storia2022Titolo.innerHTML = texts['storia-2022-titolo'];
+        storia2022Paragrafo.innerHTML = texts['storia-2022-paragrafo'];
+
+        // News section
+        notizieTitolo.innerHTML = texts['notizie-titolo'];
+        notizieSottotitolo.innerHTML = texts['notizie-sottotitolo'];
+        notizieParagrafo.innerHTML = texts['notizie-paragrafo'];
+
+        // Additional paragraphs
+        physParagrafo.innerHTML = texts['phys-paragrafo'];
+        techExploristParagrafo.innerHTML = texts['tech-explorist-paragrafo'];
+        quantumInsiderParagrafo.innerHTML = texts['quantum-insider-paragrafo'];
+      }
+
+      function writeImages() {
+        const images = data['images'];
+        for (const [key, value] of Object.entries(images)) {
+          const imgElement = document.getElementById(key);
+          if (imgElement) {
+            imgElement.src = value;
+          }
+        }
       }
 
       // change language button
@@ -115,7 +212,7 @@
     </div>
   </nav>
   <!-- IMMAGINE MULTICOLORE TITOLO -->
-  <img id="img-titolo" src="images/img1-p1.png" alt="titolo" />
+  <img id="img-titolo" src="" alt="titolo" />
   <!-- CITAZIONE A. E. -->
   <div id="citazione-AE">
     <div class="vertical-line"></div>
@@ -190,7 +287,7 @@
     </div>
   </div>
   <!-- IMMAGINE GATTO STUDIOSO -->
-  <img id="img-titolo" src="images/img2-p1.png" alt="gatto studioso" />
+  <img id="img-sotto-cards" src="images/img2-p1.png" alt="gatto studioso" />
   <!-- GATTO SCHRODINGER -->
   <div id="gatto-schrodinger">
     <div class="sopra">
