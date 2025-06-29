@@ -213,39 +213,41 @@ body {
 
 #cards .card {
     margin: 0 0 0 1rem;
-    min-width: 55vw;
-    height: 100%;
+    min-width: 70vw;
+    min-height: 100%;
     border: 2px solid white;
     border-radius: 1rem;
     background-color: var(--bg-color);
 }
 
+#cards .card h3 {
+    font-family: 'Helvetica Neue Bold';
+    font-size: 1.8rem;
+    color: var(--cards-title-color);
+    padding: 1rem 1rem 0 1rem;
+    /* line-height: 1.2rem; */
+}
+
 #cards .card h6 {
-    font-size: 0.6rem;
-    color: black;
+    color: rgb(151, 149, 149);
+    font-family: 'Helvetica Neue Bold';
+    font-size: 0.8rem;
     padding: 0.5rem 1rem 0 1rem;
     line-height: 1.2rem;
 }
 
-#cards .card h3 {
-    font-size: 1rem;
-    color: var(--cards-title-color);
-    padding: 1rem 1rem 0 1rem;
-    line-height: 1.2rem;
-}
-
 #cards .card h4 {
+    color: rgb(215, 220, 238);
+    font-family: 'Helvetica Neue Bold Italic';
+    font-size: 0.9rem;
     padding: 0.5rem 1rem;
-    color: black;
-    font-size: 0.7rem;
-    font-weight: bold;
-    line-height: 1rem;
+    line-height: 1.2rem;
 }
 
 #cards .card p {
     padding: 0 1rem 1rem 1rem;
-    color: var(--subtitle-color);
-    font-size: 0.7rem;
+    color: #9f9ed6;
+    font-size: 1rem;
     line-height: 1.2rem;
 }
 
