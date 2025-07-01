@@ -315,44 +315,47 @@
       <img src="images/vignetta2.png" alt="Schrödinger">
     </div>
   </div>
-  <section class="news-section" id="navbar6">
-    <div class="news-header">
-      <div class="vertical-line"></div>
-      <div class="news-title" id="notizie-titolo">
-      </div>
-      <div class="news-desc" id="notizie-paragrafo">
-      </div>
-    </div>
-    <div class="news-grid">
-      <!-- Phys.org -->
-      <div class="news-card">
-        <div class="news-card-content">
-          <div class="news-card-title">Phys.org</div>
-          <div class="news-card-desc" id="phys-paragrafo">
-          </div>
-        </div>
-        <img src="images/logo_phys.org.png" alt="Phys.org" class="news-card-logo">
-      </div>
-      <!-- Tech Explorist -->
-      <div class="news-card">
-        <div class="news-card-content">
-          <div class="news-card-title">Tech Explorist</div>
-          <div class="news-card-desc" id="tech-explorist-paragrafo">
-          </div>
-        </div>
-        <img src="images/logo_tech_explorist.png" alt="Tech Explorist" class="news-card-logo">
-      </div>
-      <!-- Quantum Insider -->
-      <div class="news-card">
-        <div class="news-card-content">
-          <div class="news-card-title">Quantum Insider</div>
-          <div class="news-card-desc" id="quantum-insider-paragrafo">
-          </div>
-        </div>
-        <img src="images/logo_quantum.png" alt="Quantum Insider" class="news-card-logo">
+  <!-- News section -->
+  <div id="news">
+    <div id="titolo-news">
+      <div class="linea-verticale"></div>
+      <div class="titolo-sottotitolo">
+        <h2 id="notizie-titolo"></h2>
+        <h3 id="notizie-sottotitolo"></h3>
       </div>
     </div>
-  </section>
+    <div id="notizie-paragrafo"></div>
+    <!-- Phys.org -->
+    <div class="columns">
+      <div class="column">
+        <h2>Phys.org</h2>
+        <p id="phys-paragrafo"></p>
+      </div>
+      <div class="column">
+        <img src="images/logo_phys.org.png" alt="Phys.org">
+      </div>
+    </div>
+    <!-- Tech Explorist -->
+    <div class="columns">
+      <div class="column">
+        <h2>Tech Explorist</h2>
+        <p id="tech-explorist-paragrafo"></p>
+      </div>
+      <div class="column">
+        <img src="images/logo_tech_explorist.png" alt="Tech Explorist">
+      </div>
+    </div>
+    <!-- Quantum Insider -->
+    <div class="columns">
+      <div class="column">
+        <h2>Quantum Insider</h2>
+        <p id="quantum-insider-paragrafo"></p>
+      </div>
+      <div class="column">
+        <img src="images/logo_quantum.png" alt="Quantum Insider">
+      </div>
+    </div>
+  </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const timelineNavItems = document.querySelectorAll('.timeline-nav-item');
