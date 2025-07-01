@@ -1581,14 +1581,14 @@ h1 .blue {
 }
 
 #titolo-news .titolo-sottotitolo h2 {
-    color: var(--violachiaro);
+    color: white;
     font-family: 'Helvetica Neue Bold';
     font-size: 3rem;
 }
 
 #titolo-news .titolo-sottotitolo h3 {
-    color: white;
-    font-family: 'Helvetica Neue Bold';
+    color: var(--violachiaro);
+    font-family: 'Helvetica Neue Bold Italic';
     font-size: 2rem;
 }
 
