@@ -267,10 +267,6 @@ strong {
     padding-bottom: 1rem;
 }
 
-#paragrafo-AE-2 {
-    font-weight: bold;
-}
-
 #paragrafo-AE-3 {
     font-family: 'Roboto Light';
     font-size: 1.5rem;
@@ -937,7 +933,7 @@ h1 .blue {
 
 #gatto-schrodinger .vertical-line {
     background-color: white;
-    width: 3px;
+    width: 1px;
     height: 5rem;
     top: 0;
     left: 0;
@@ -1136,14 +1132,14 @@ h1 .blue {
 }
 
 .timeline-title {
-    margin-left: 10%;
+    margin-left: 1.5rem;
     position: relative;
-    font-size: 2.5em;
+    font-size: 3rem;
     /* Increased font size */
     font-weight: bold;
-    margin-bottom: 0.2em;
     color: white;
     font-family: 'Helvetica Neue Bold';
+    line-height: 50px;
 }
 
 .timeline-title .highlight {
@@ -1151,19 +1147,19 @@ h1 .blue {
 }
 
 .timeline-title::before {
-    height: 95px;
+    height: 90px;
     content: '';
     position: absolute;
     left: -10px;
-    top: 8px;
+    top: 2px;
     width: 2px;
     background-color: white;
 }
 
 .timeline-desc {
     margin-left: 8%;
-    font-size: 1.2em;
-    color: white;
+    font-size: 1rem;
+    color: var(--grigiochiaro);
     max-width: 420px;
     /* Keep for mobile default */
     padding-bottom: 20px;
@@ -1430,10 +1426,12 @@ h1 .blue {
         /* Larger font size for very large screens */
         padding-left: 20px;
         /* Space for the vertical line */
+        font-size: 6rem;
+        line-height: 100px;
     }
 
     .timeline-title::before {
-        height: 120px;
+        height: 170px;
         content: '';
         position: absolute;
         left: 0;
@@ -1460,6 +1458,7 @@ h1 .blue {
         /* Adjust max-width for larger screens */
         margin-left: auto;
         /* Push description to the right */
+        color: var(--grigiochiaro)
     }
 
     .timeline-slider-container {
@@ -1495,23 +1494,12 @@ h1 .blue {
         position: relative;
     }
 
-    .scienziato {
-        position: relative;
-        max-width: 260px;
-        text-align: center;
-    }
-
-    .scienziato img {
-        width: 100%;
-        max-width: 260px;
-    }
-
     .fumetto.alto {
         color: white;
         padding: 20px 15px 20px 15px;
         left: 0;
-        bottom: 90%;
-        left: 0;
+        bottom: 40rem;
+        left: 25rem;
         transform: translateY(-50px);
     }
 
@@ -1519,14 +1507,9 @@ h1 .blue {
         color: white;
         padding: 20px 15px 20px 15px;
         right: 0;
-        bottom: 90%;
-        right: 0;
+        bottom: 42rem;
+        right: 28rem;
         transform: translateY(-20px);
-    }
-
-    .scienziato img {
-        width: 100%;
-        height: auto;
     }
 
     .fumetto {
@@ -1634,15 +1617,17 @@ h1 .blue {
 }
 
 @media (min-width: 900px) {
+
     #titolo-news {
-        max-width: 800px;
-        margin: 0 auto 24px auto;
         text-align: left;
     }
 
-    #notizie-titolo{
+    #titolo-news h2{
         font-size: 6rem;
-        margin-bottom: 3rem;
+    }
+
+    #titolo-news h3{
+        font-size: 6rem;
     }
 
     #notizie-sottotitolo {
@@ -1670,4 +1655,3 @@ h1 .blue {
         margin: auto 0;
     }
 }
-
