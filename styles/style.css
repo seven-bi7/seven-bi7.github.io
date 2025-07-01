@@ -13,42 +13,149 @@
     src: url('../fonts/helvetica-neue-5/HelveticaNeueBold.otf');
 }
 
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../fonts/roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Black';
+    src: url('../fonts/roboto/Roboto-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Light Italic';
+    src: url('../fonts/roboto/Roboto-LightItalic.ttf');
+}
+
 /*          STYLESHEET PART 1             */
 
 :root {
-    --bg-color: #333250;
-    --subtitle-color: #8584d5;
-    --cards-title-color: rgb(98, 180, 172);
+    --violascuro: #333250;
+    --violachiaro: #8584d5;
+    --verdemarino: #62b4ad;
+    --grigiochiaro: #9394a1;
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-color);
-    font-family: 'Roboto' !important;
+    background-color: var(--violascuro);
+    font-family: 'Roboto Light' !important;
     font-weight: '300' !important;
+    color: white;
+    overflow-x: hidden;
+}
+
+strong {
+    font-family: 'Roboto Black';
+    color: white;
 }
 
 /*  NAVBAR */
 
 .navbar {
-    background-color: var(--bg-color) !important;
+  background-color: transparent !important;
+  transition: background-color 0.3s ease;
+  font-family: 'Helvetica Neue', sans-serif;
+  z-index: 1000;
+  padding-top: 0.3rem;
+}
+
+.navbar.scrolled {
+  background-color: #333250 !important; /* viola */
+}
+
+.brand-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: white !important;
+  margin-left: 2.5rem;
+}
+
+@media screen and (max-width: 576px){
+  .brand-logo {
+    margin-left: 1.4rem;
+  }
+}
+
+.navbar-end {
+  margin-right: 2rem; /* Sposta tutto verso sinistra */
 }
 
 .navbar-burger {
-    color:white !important;
+  color: white !important;
 }
+
+@media screen and (max-width: 1024px) {
+  .navbar-menu.is-active {
+    background-color: var(--violascuro) !important; /* Azzurro */
+    margin-top: -17px;
+    padding-bottom: 10px;
+  }
+}
+
+/* Rimozione sfondo su hover */
+.navbar-item:hover {
+  background-color: transparent !important;
+}
+
+/* Menu item animazione */
+.nav-link {
+  color: white !important;
+  transition: transform 0.2s ease, font-weight 0.2s ease;
+}
+
+.nav-link:hover {
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+/* Lingua */
+.lang-toggle {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.lang-option {
+  color: #9394a1;
+  transition: color 0.2s ease;
+}
+
+.lang-option.active {
+  color: white;
+}
+
+/* Mobile menu: elimina sfondo hover */
+.navbar-menu .navbar-item:hover {
+  background-color: transparent !important;
+}  
 
 /*  IMMAGINE MULTICOLORE TITOLO */
 
 #img-titolo {
-    margin: 0 1.5rem;
-    width: calc(100% - 3rem);
+    padding-top: 3rem;
+    margin-left: 4rem;
+    width: calc(95% - 3rem);
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 768px) {
     #img-titolo {
-        margin: 0 4rem;
-        width: calc(100% - 8rem);
+      padding-top: 3rem;
+      width: calc(90% - 3rem);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #img-titolo {
+      padding-top: 3rem;
+      margin-left: 2rem;
+      width: calc(95% - 3rem);
+      
+    }
+    .brand-logo {
+      font-size: 1rem;
     }
 }
 
@@ -61,9 +168,31 @@ body {
     justify-content: left;
 }
 
-#citazione-AE .vertical-line {
-    background-color: white;
-    width: 2px;
+#citazione-AE .linea-verticale1 {
+  background-color: white;
+  width: 2px;         /* spessore della linea */
+  height: 21rem;       /* altezza della linea */
+  margin-right: 1rem; /* spazio tra la linea e la citazione */
+  margin-left: 3.1rem;
+}
+
+
+@media screen and (max-width: 768px){
+  #citazione-AE .linea-verticale1 {
+    height: 11rem;       /* altezza della linea */
+    margin-right: -2rem; /* spazio tra la linea e la citazione */
+    margin-left: 0rem;
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+    #citazione-AE .linea-verticale1 {
+      width: 1px; 
+      height: 5rem;       /* altezza della linea */
+      margin-right: -2.7rem; /* spazio tra la linea e la citazione */
+      margin-left: -2.3rem;
+    }
 }
 
 #citazione-AE .citazione {
@@ -73,15 +202,17 @@ body {
 
 #citazione-AE .citazione h2 {
     font-family: 'Helvetica Neue Bold Italic';
-    font-size: 1.4rem;
+    font-size: 5rem;
+    line-height: 1.2;
 }
 
 #citazione-AE .citazione h6 {
     font-family: 'Helvetica Neue Italic';
+    font-size: 2.5rem;
     color: #9999a8;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 768px) {
     #citazione-AE {
         padding: 2rem 4.5rem;
     }
@@ -91,287 +222,1321 @@ body {
     }
 
     #citazione-AE .citazione h2 {
-        font-size: 5rem;
+        font-size: 2.5rem;
         line-height: 1.2;
     }
 
     #citazione-AE .citazione h6 {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
     }
+}
+
+@media screen and (max-width: 576px) {
+  #citazione-AE .citazione h2 {
+      font-size: 1.1rem;
+      line-height: 1.2;
+  }
+
+  #citazione-AE .citazione h6 {
+      font-size: 0.8rem;
+  }
 }
 
 /*  PARAGRAFO A. E. */
 
 #paragrafo-AE {
     color: white;
-    padding: 0 1.5rem;
+    padding: 0 4.5rem;
 }
 
-#paragrafo-AE h3 {
-    font-family: 'Helvetica Neue Bold Italic';
-    color: var(--subtitle-color);
-    font-size: 2rem;
+#paragrafo-AE-1 {
+  font-family: 'Helvetica Neue Bold Italic';
+  color: var(--violachiaro);
+  font-size: 4rem;
+  padding-bottom: 1rem;
+}
+
+#paragrafo-AE-3 {
+    font-family: 'Roboto Light';
+    font-size: 1.5rem;
     padding-bottom: 1rem;
+    line-height: 1.5;
 }
 
-#paragrafo-AE h4 {
-    font-family: 'Helvetica Neue Bold';
-    /* font-size: 1.2rem; */
-    line-height: 1.4;
+#paragrafo-AE-4 {
+    font-family: 'Roboto Light';
+    font-size: 1.5rem;
+    line-height: 1.5;
 }
 
-#paragrafo-AE strong {
+@media screen and (max-width: 768px) {
+  #paragrafo-AE-1 {
+    font-size: 3rem;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  #paragrafo-AE {
     color: white;
-}
+    padding: 0 2rem;
+  }
 
-@media screen and (min-width: 769px) {
-    #paragrafo-AE {
-        padding: 0 4.5rem;
-    }
+  #paragrafo-AE-1 {
+    font-size: 1.5rem;
+  }
 
-    #paragrafo-AE h3 {
-        font-size: 3.8rem;
-    }
+  #paragrafo-AE-3 {
+    font-size: 1.2rem;
+  }
 
-    #paragrafo-AE p {
-        font-size: 1.8rem;
-    }
+  #paragrafo-AE-4 {
+    font-size: 1.2rem;
+  }
 }
 
 /*  TITOLO CARDS */
-
 #titolo-cards {
-    padding: 2rem 1.5rem 2rem 1.5rem;
+    padding: 5rem 1.5rem 2rem 1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: left;
 }
 
-#titolo-cards .vertical-line {
-    background-color: white;
-    width: 2px;
+#titolo-cards .linea-verticale2 {
+  background-color: white;
+  width: 2px;         /* spessore della linea */
+  height: 10rem;       /* altezza della linea */
 }
 
+
 #titolo-cards .titolo-sottotitolo {
-    color: white;
-    padding: 0 0 0 1rem;
+  font-size: 6rem;
+  padding: 0 0 0 3rem;
 }
 
 #titolo-cards .titolo-sottotitolo h2 {
-    font-family: 'Helvetica Neue Bold';
-    font-size: 2rem;
-    color: var(--subtitle-color);
-}
+  color: var(--violachiaro);
+  font-family: 'Helvetica Neue Bold';
+  margin-left: 1.5rem;
+  margin-top: -12rem;
+}  
 
 #titolo-cards .titolo-sottotitolo h3 {
-    font-family: 'Helvetica Neue Bold';
+  color:white;
+  font-family: 'Helvetica Neue Bold';
+  margin-left: 1.5rem;
+  margin-top: -3rem;
+}
+
+@media screen and (max-width: 768px){
+  #titolo-cards{
+    padding-top: 1rem;
+  }
+  #titolo-cards .linea-verticale2 {
+    height: 8rem;       /* altezza della linea */
+  }
+  #titolo-cards .titolo-sottotitolo{
+    font-size: 4rem;
+  }
+  #titolo-cards .titolo-sottotitolo h2 {
+    margin-top: -9rem;
+  }  
+  
+  #titolo-cards .titolo-sottotitolo h3 {
+    margin-top: -1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #titolo-cards {
+    margin-left: -2.5rem;
+}
+  #titolo-cards .linea-verticale2 {
+    height: 3.5rem;       /* altezza della linea */
+    width: 1px;
+  }
+  #titolo-cards .titolo-sottotitolo{
     font-size: 2rem;
+  }
+  #titolo-cards .titolo-sottotitolo h2 {
+    margin-top: -4.1rem;
+    margin-left: 1rem;
+  }  
+  
+  #titolo-cards .titolo-sottotitolo h3 {
+    margin-top: -1rem;
+    margin-left: 1rem;
 }
-
-@media screen and (min-width: 769px) {
-    #titolo-cards {
-        padding: 6rem 4.5rem;
-    }
-
-    #titolo-cards .titolo-sottotitolo {
-        padding: 0 0 0 3.5rem;
-    }
-
-    #titolo-cards .titolo-sottotitolo h2 {
-        font-size: 7rem;
-        line-height: 1;
-    }
-
-    #titolo-cards .titolo-sottotitolo h3 {
-        font-size: 7rem;
-        line-height: 1;
-    }
 }
-
 /*  CARDS */
 
 #cards {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 #cards .slider {
-    margin: 0 2rem 0 0;
-    overflow-x: scroll;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  margin: 0 2rem 0 0;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 #cards .slider::-webkit-scrollbar {
-  display: none;
+display: none;
 }
 
 #cards .slider img {
-    width: 40vw;
-    height: 100%;
+  width: 40vw;
+  height: 100%;
 }
 
 #cards .card {
-    margin: 0 0 0 1rem;
-    min-width: 70vw;
-    min-height: 100%;
-    border: 2px solid white;
-    border-radius: 1rem;
-    background-color: var(--bg-color);
+  margin: 0 0 0 1rem;
+  min-width: 70vw;
+  min-height: 100%;
+  border: 2px solid white;
+  border-radius: 1rem;
+  background-color: var(--bg-color);
 }
 
 #cards .card h3 {
-    font-family: 'Helvetica Neue Bold';
-    font-size: 1.8rem;
-    color: var(--cards-title-color);
-    padding: 1rem 1rem 0 1rem;
-    /* line-height: 1.2rem; */
+  font-family: 'Helvetica Neue Bold';
+  font-size: 1.8rem;
+  color: var(--verdemarino);
+  padding: 1rem 1rem 0 1rem;
+  /* line-height: 1.2rem; */
 }
 
 #cards .card h6 {
-    color: rgb(151, 149, 149);
-    font-family: 'Helvetica Neue Bold';
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem 0 1rem;
-    line-height: 1.2rem;
+  color: var(--verdemarino);
+  font-family: 'Helvetica Neue Bold';
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem 0 1rem;
+  line-height: 1.2rem;
 }
 
 #cards .card h4 {
-    color: rgb(215, 220, 238);
-    font-family: 'Helvetica Neue Bold Italic';
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    line-height: 1.2rem;
+  color: var(--violachiaro);
+  font-family: 'Helvetica Neue Bold Italic';
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  line-height: 1.2rem;
 }
 
 #cards .card p {
-    padding: 0 1rem 1rem 1rem;
-    color: #9f9ed6;
-    font-size: 1rem;
-    line-height: 1.2rem;
+  padding: 0 1rem 1rem 1rem;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+#cards .card p strong{
+  color: white;
 }
 
 @media screen and (min-width: 769px) {
-    #cards {
-        margin-bottom: 4rem;
-    }
+  #cards {
+      margin-bottom: 4rem;
+  }
 
-    #cards .slider {
-        gap: 2rem;
-    }
+  #cards .slider {
+      gap: 2rem;
+  }
 
 
-    #cards .card {
-        margin-left: 2rem;
-        min-width: 35vw;
-        border-radius: 2rem;
-    }
+  #cards .card {
+      margin-left: 2rem;
+      min-width: 35vw;
+      border-radius: 2rem;
+  }
 
-    #cards .card h3 {
-        font-size: 2.5rem;
-        padding: 2rem 2rem 0 2rem;
-        line-height: 2.5rem;
-    }
+  #cards .card h3 {
+      font-size: 2.5rem;
+      padding: 2rem 2rem 0 2rem;
+      line-height: 2.5rem;
+  }
 
-    #cards .card h6 {
-        font-size: 1rem;
-        padding: 1rem 2rem 0 2rem;
-    }
+  #cards .card h6 {
+      font-size: 1rem;
+      padding: 1rem 2rem 0 2rem;
+  }
 
-    #cards .card h4 {
-        padding: 1.5rem 2rem;
-        font-size: 1.4rem;
-        line-height: 1.6rem;
-    }
+  #cards .card h4 {
+      padding: 1.5rem 2rem;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+  }
 
-    #cards .card p {
-        padding: 0 2rem 2rem 2rem;
+  #cards .card p {
+      padding: 0 2rem 2rem 2rem;
+      font-size: 1.6rem;
+      line-height: 2rem;
+  }
+}
+
+#img-sotto-cards {
+  width: 60rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* CSS MARIA ------------------------------------------------------ */
+
+
+h1 .white {
+    color: white;
+    font-family: 'Helvetica Neue Bold';
+    font-size: 6rem;
+  }
+  
+  h1 .blue {
+    color: var(--verdemarino);
+    font-family: 'Helvetica Neue Bold';
+    font-size: 6rem;
+  }
+
+  .sottotitolo3 {
+    color: var(--violachiaro);
+    font-family: 'Helvetica Neue Bold Italic';
+    font-size: 3rem;
+    margin-top: -1rem;
+  }
+
+/*schermi medi*/
+@media (max-width: 768px){ /*messo 844 perché considero uno schermo ruotato di un telefono*/
+    h1 .white {
+        font-size: 3.7rem;
+      }
+      
+      h1 .blue {
+        font-size: 3.7rem;
+      }
+    
+      .sottotitolo3 {
+        font-size: 2.3rem;
+      }
+}
+
+/*schermi piccoli*/ 
+@media (max-width: 576px){
+    
+    /*PROBLEMA: DA RISOLVERE LA DIMENSIONEEEEEEEEEEEEEEEEEE*/
+    h1 .white {
         font-size: 1.6rem;
-        line-height: 2rem;
+      }
+      
+      h1 .blue {
+        font-size: 1.6rem;
+      }
+    
+      .sottotitolo3 {
+        font-size: 1.2rem;
+        margin-top: 0rem;
+      }
+}
+
+/*------------------------------------------*/
+
+  .entanglement {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .first-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 10px;
+  }
+
+  .first-block .text{
+    flex: 2;
+    max-width: 47%;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .first-block .text strong{
+    color: white;
+  }
+
+  .first-block .image {
+    height: 47rem;
+    transform: rotate(120deg);
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6rem;
+    margin-right: -25rem;
+    margin-left: -5rem;
+  }
+
+  .second-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .second-block .image{
+    height: auto;
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 5rem;
+  }
+
+  .second-block .quote{
+    max-width: 60%;
+    font-size: 1.5rem;
+    font-family: 'Roboto Light Italic';
+    justify-content: flex-end;
+    margin-top: 6rem;
+    margin-left: 12rem;
+    color: white;
+  }
+
+  .second-block .quote strong{
+    color: white;
+  }
+
+  .author{
+    font-size: 1.5rem;
+    color: var(--grigiochiaro);
+    font-family: 'Helvetica Neue Bold Italic';
+    margin-top: 0.5rem;
+  }
+
+  .author_subtitle {
+    color: var(--grigiochiaro);
+    font-family: 'Helvetica Neue Italic';
+    margin-top: -0.5rem;
+
+  }
+
+/*schermi medi*/
+@media (max-width: 768px) { /*messo 844 perché considero uno schermo ruotato di un telefono*/
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .first-block {
+        flex-direction: column;
+    }
+
+    .first-block .text{
+        max-width: 100%;
+    }
+
+    .first-block .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        margin: -15rem auto 0 auto; 
+      }
+      
+      .first-block .image img {
+        max-width: 90vw;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: rotate(270deg);
+      }
+
+      .second-block {
+        flex-direction: column-reverse;
+    }
+    
+    .second-block .quote {
+        max-width: 70vw;
+        margin-top: -13rem;
+        margin-left: 4rem;
+    }
+
+    .second-block .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        margin: 20rem auto 0 auto; 
+    }
+
+    .second-block .image img{
+        max-width: 50%;
+        margin-top: -20rem;
     }
 }
+
+/*schermi piccoli*/
+@media (max-width: 576px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .first-block {
+        flex-direction: column;
+    }
+
+    .first-block .text{
+        max-width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .first-block .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        margin: -20rem auto 0 auto; 
+      }
+      
+    .first-block .image img {
+        max-width: 90vw;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        transform: rotate(270deg);
+      }
+    
+    .second-block {
+        flex-direction: column-reverse;
+    }
+
+    .second-block .quote {
+        max-width: 100%;
+        font-size: 1.2rem;
+        margin-top: -19rem;
+        margin-left: auto;
+    }
+    
+    .second-block .image img{
+        max-width: 90%;
+        margin-top: -20rem;
+    }
+}
+
+ /*TERZO BLOCCO: SPIEGAZIONE*/
+
+ .third-block {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+ }
+
+ .vertical-title {
+    color: var(--violachiaro);
+    font-family: 'Helvetica Neue Bold';
+    font-size: 8rem;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: left top;
+    margin-left: 3rem;
+    margin-top: 55rem;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 768px) {
+  .vertical-title {
+    position: absolute;
+    font-size: 6rem;
+    margin-top: 42rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .third-block{
+    padding-top: 13rem;
+  }
+  .vertical-title {
+      font-size: 2.6rem;
+      margin-top: -11rem;
+      margin-left: -4rem;
+      transform: rotate(0deg) translateY(50%);
+      letter-spacing: 0px;
+  }
+}
+
+.vertical-line1 {
+    width: 3px;                
+    height: 71.3rem;             
+    background-color: white;
+  
+    position: absolute;        
+    top: 7rem;                
+    left: 7.5rem;                
+  }
+
+@media (max-width: 768px) {
+    .vertical-line1 {
+        height: 62rem;
+        top: 5.5rem;                
+        left: 7.2rem; 
+    }
+}
+
+@media (max-width: 576px) {
+    .vertical-line1 {
+        transform: rotate(90deg);
+        width: 2px;
+        height: 19rem;
+        top: -2rem;
+        left: 9.4rem;
+    }
+}
+
+.third-block .text {
+    font-size: 1.5rem;
+    margin-top: 6.5rem;
+    margin-left: -40rem;
+    max-width: 44%;
+    color: white;
+}
+
+.third-block .text strong{
+  color: white;
+}
+
+.third-block .image {
+    height: 52rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15rem;
+    margin-right: -25rem;
+    margin-left: -7rem;
+}
+
+@media (max-width: 768px) {
+    .third-block {
+        flex-direction: column;
+    }
+
+    .third-block .text {
+        margin-top: 5rem;
+        margin-left: 10rem;
+        max-width: 80%;
+    }
+
+    .third-block .image {
+        margin: auto;
+        margin-top: 2rem;
+        height: auto;
+        max-width: 100%;
+        justify-content: center;
+      }
+      
+    .third-block .image img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 576px) {
+    .third-block {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem; /* spaziatura tra testo e immagine */
+    }
+  
+    .third-block .text {
+      margin-top: -5rem;
+      margin-left: 0;
+      max-width: 100%;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+  
+    .third-block .image {
+      margin: 0;
+      height: auto;
+      max-width: 100%;
+      justify-content: center;
+    }
+    
+    .third-block .image img {
+        width: 150%;
+        object-fit: contain;
+      }
+  }
+
+
+/* CSS BENJI ----------------------------------------------------------- */
 
 /* GATTO SCHRODINGER */
 
 #gatto-schrodinger .sopra {
-    width: 100%;
-    height: 35vw;
-    overflow: visible;
+  width: 100%;
+  height: 35vw;
+  overflow: visible;
 }
 
 #gatto-schrodinger .img-sopra {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 #gatto-schrodinger .sotto {
-    width: 100%;
-    min-height: 300px;
-    background-image: url("../images/GSp2.png");
-    background-position: center;
-    background-size: 100% 100%;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    padding: 1.5rem 20% 6rem 20%;
+  width: 100%;
+  min-height: 300px;
+  background-image: url("../images/GSp2.png");
+  background-position: center;
+  background-size: 100% 100%;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  padding: 1.5rem 20% 6rem 20%;
 }
 
 #gatto-schrodinger .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
 }
 
 #gatto-schrodinger .vertical-line {
-    background-color: white;
-    width: 2px;
+  background-color: white;
+  width: 3px;
+  height: 5rem;
+  top: 0;
+  left: 0;
+  transform: rotate(0deg);
 }
 
 #gatto-schrodinger .titolo-sottotitolo {
-    color: white;
-    padding: 0 0 0 1rem;
+  color: white;
+  padding: 0 0 0 1rem;
 }
 
 #gatto-schrodinger .titolo-sottotitolo h2 {
-    font-family: 'Helvetica Neue Bold';
-    font-size: 2rem;
+  font-family: 'Helvetica Neue Bold';
+  font-size: 2rem;
 }
 
 #gatto-schrodinger .titolo-sottotitolo h3 {
-    font-family: 'Helvetica Neue Bold';
-    font-size: 2rem;
-    color: var(--subtitle-color);
+  font-family: 'Helvetica Neue Bold';
+  font-size: 2rem;
+  color: var(--violachiaro);
 }
 
 #gatto-schrodinger p {
-    padding-top: 1rem;
-    color: white;
-    font-size: 0.8rem;
-    line-height: 1.2;
+  padding-top: 1rem;
+  color: white;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
-@media screen and (min-width: 769px) {
-    #gatto-schrodinger .sotto {
-        padding: 4rem 20% 11rem 20%;
-    }
+@media screen and (min-width: 844px) {
+  #gatto-schrodinger .sotto {
+      padding: 4rem 20% 11rem 20%;
+  }
 
-    #gatto-schrodinger .titolo-sottotitolo {
-        padding: 0 0 0 3.5rem;
-    }
+  #gatto-schrodinger .titolo-sottotitolo {
+      padding: 0 0 0 3.5rem;
+  }
 
-    #gatto-schrodinger .titolo-sottotitolo h2 {
-        font-size: 7rem;
-        line-height: 1;
-    }
+  #gatto-schrodinger .titolo-sottotitolo h2 {
+      font-size: 5rem;
+      line-height: 1;
+  }
 
-    #gatto-schrodinger .titolo-sottotitolo h3 {
-        font-size: 7rem;
-        line-height: 1;
-    }
+  #gatto-schrodinger .titolo-sottotitolo h3 {
+      font-size: 5rem;
+      line-height: 1;
+  }
 
-    #gatto-schrodinger p {
-        padding-top: 2rem;
-        color: white;
-        font-size: 1.8rem;
-        line-height: 1.4;
-    }
+  #gatto-schrodinger p {
+      padding-top: 2rem;
+      color: white;
+      font-size: 1.6rem;
+      line-height: 1.4;
+  }
+
+  #gatto-schrodinger .vertical-line {
+    color: white;
+    width: 3px;
+    height: 9rem;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+
+
+@media (min-width: 844px) {
+  .timeline-card {
+    flex-basis: 45%; /* A percentage of the container's width */
+    min-width: 330px; /* Allow them to shrink but not too much */
+    max-width: 330px; /* Max width to prevent them from becoming too large */
+    min-height: 250px; /* Set a minimum height for uniform cards */ 
+    max-height: 250px;
+    background-color: var(--violascuro); /* Card background matches body background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for card */
+    border: 1px solid white; /* Add white border for desktop */
+    padding: 25px 20px; /* Adjusted vertical padding for desktop */
+    border-radius: 25px; /* Increased border radius for desktop */
+  }
+  .timeline-nav-line {
+    display: flex; /* Ensure it stays flex on desktop */
+    flex-direction: row; /* Arrange years horizontally on desktop */
+    width: 100%;
+    max-width: 900px;
+    margin-top: 40px;
+    border-top: 1px solid #d6d6e7; /* Add border back for desktop */
+    padding-top: 20px; /* Add padding back for desktop */
+    justify-content: space-around; /* Distribute horizontally */
+    align-items: center; /* Vertically align */
+  }
+  .timeline-nav-item {
+    background: none;
+    border-radius: 0;
+    margin: 0; /* Remove vertical margin for desktop */
+    padding: 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .timeline-nav-item:hover {
+    color: var(--violachiaro);
+  }
+  .timeline-card-year {
+    font-size: 0.9em; /* Increased font size for desktop */
+  }
+  .timeline-card-title {
+    font-size: 1.4em; /* Increased font size for desktop */
+  }
+  .timeline-card-description {
+    font-size: 1.0em; /* Increased font size for desktop */
+  }
+}
+@media (min-width: 1200px) {
+  .timeline-card {
+    flex-basis: 30%; /* Try to show more cards */
+    min-width: 310px; /* Allow more shrinking */
+    max-width: 310px; /* Max width */
+    min-height: 230px; /* Set a minimum height for uniform cards */
+    max-height: 230px;
+    background-color: var(--violascuro); /* Card background matches body background */
+    border: 1px solid white; /* Add white border for larger desktop */
+    padding: 25px 20px; /* Adjusted vertical padding for larger desktop */
+    border-radius: 25px; /* Increased border radius for larger desktop */
+  }
+  .timeline-nav-item:hover {
+    color: var(--violachiaro);
+  }
+  .timeline-card-year {
+    font-size: 1.1em; /* Further increased font size for larger desktop */
+  }
+  .timeline-card-title {
+    font-size: 1.7em; /* Further increased font size for larger desktop */
+  }
+  .timeline-card-description {
+    font-size: 1.2em; /* Further increased font size for larger desktop */
+  }
+}
+.timeline-section {
+  background: var(--violascuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+.timeline-header {
+  width: 85%;
+  max-width: 900px;
+  margin: 18px 0 8px 0;
+  text-align: left; /* Default for mobile */
+}
+.timeline-title {
+  margin-left: 10%;
+  position: relative;
+  font-size: 2.5em; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 0.2em;
+  color: white;
+  font-family: 'Helvetica Neue Bold';
+}
+.timeline-title .highlight {
+  color: var(--violachiaro);
+}
+.timeline-title::before {
+  height: 95px;
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 8px;
+  width: 2px;
+  background-color: white;
+}
+.timeline-desc {
+  margin-left: 8%;
+  font-size: 1.2em;
+  color: white;
+  max-width: 420px; /* Keep for mobile default */
+  padding-bottom: 20px;
+}
+.timeline-slider-container {
+  overflow-x: auto;
+  margin-bottom: 0;
+  width: 90%; /* Ensure full viewport width on mobile */
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE e Edge */
+}
+.timeline-slider-container::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+}
+.timeline-slider {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure cards stay in a single row for scrolling */
+  /* Removed width: 2000px; TEMPORARY: Force a very large width for diagnostic */
+  gap: 30px; /* Increased gap for better mobile scrolling */
+  padding: 4px 20px; /* Adjusted padding for better mobile peek */
+  align-items: flex-start; /* Prevent images from stretching vertically */
+}
+.timeline-card {
+  flex-shrink: 0;
+  width: calc(100vw - 40px); /* Adjust width based on viewport and padding */
+  /* Removed min-width: 320px; as 90vw should be sufficient and min-width is redundant here */
+  max-width: 330px;
+  min-width: 330px;
+  min-height: 270px;
+  max-height: 270px;
+  background-color: var(--violascuro); /* Card background matches body background */
+  border-radius: 25px; /* Increased border radius */
+  padding: 25px 20px; /* Adjusted vertical padding */
+  border: 1px solid #fff; /* Add white border */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+}
+.timeline-card-year {
+  font-size: 1.3em;
+  color: var(--verdemarino); /* Teal color for year */
+  margin-bottom: 5px;
+}
+.timeline-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--violachiaro); /* Highlight color for title */
+  margin-bottom: 8px;
+}
+.timeline-card-description {
+  font-size: 1.1em;
+  line-height: 1.4;
+  color: white; /* White color for description */
+}
+@media (min-width: 600px) {
+  .timeline-slider {
+    gap: 30px;
+    padding: 4px 40px; 
+  }
+  .timeline-card {
+    max-width: 320px;
+    min-width: 320px;
+    min-height: 260px;
+    max-height: 260px;
+
+  }
+}
+.timeline-nav-line {
+  width: 80%;
+  display: flex; /* Make it visible on mobile */
+  flex-direction: row; /* Stack years horizontally on mobile */
+  justify-content: center; /* Center years horizontally */
+  align-items: center; /* Center years vertically */
+  /* Removed width: 100%; and max-width: 900px; for horizontal scrolling */
+  margin-top: 30px; /* Space from content above */
+  border-top: 1px solid #d6d6e7; /* Add horizontal line */
+  padding-top: 10px; /* Space dates from the line */
+  padding-bottom: 5px; /* Add some padding below the line */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
+}
+.timeline-nav-item {
+  background: none;
+  border-radius: 0;
+  margin: 0 5%; /* Add horizontal margin for inline items */
+  padding: 0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  flex-shrink: 0; /* Prevent items from shrinking */
+}
+.timeline-nav-item:hover {
+  color: var(--violachiaro);
+}
+@media (min-width: 900px) {
+  .timeline-header {  
+    min-width: 90%; 
+    width: 90%;
+    margin: 18px 0 8px 0; /* Center header */
+    display: flex; /* Use flexbox for horizontal alignment */
+    flex-direction: row; /* Align children horizontally */
+    justify-content: space-between; /* Space title and description */
+    align-items: flex-start; /* Align items to the top */
+  }
+  .timeline-title {
+    position: relative; /* For absolute positioning of ::before */
+    display: flex; /* Make title a flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align items to the left */
+    font-size: 2.5em; /* Set a general font size for title parts */
+    padding-left: 20px; /* Space for the vertical line */
+  }
+  .timeline-title::before {
+    height: 100px;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 0;
+    width: 2px;
+    background-color: white;
+  }
+  .timeline-title span {
+    font-family: 'Helvetica Neue Bold';
+    margin-bottom: 0; /* Adjust spacing between lines of title */
+  }
+  .timeline-title span .highlight {
+    font-family: 'Helvetica Neue Bold';
+    display: inline; /* Revert to inline as ::after is gone */
+    color: var(--violachiaro); /* Ensure highlight color is applied */
+  }
+  .timeline-desc {
+    margin-left: auto; /* Push description to the right */
+    max-width: 400px; /* Limit width of description for the right area */
+  }
+  .timeline-slider-container {
+    width: 90%; /* Make it smaller than 100vw */
+    max-width: 1100px; /* An absolute limit if needed */
+    margin: 0 auto; /* Center the container */
+  }
+  .timeline-slider {
+    gap: 20px;
+    padding: 4px 0px; /* No peek on desktop for multiple cards */
+  }
+  .timeline-nav-line {
+    /* display: flex; Removed, defined in base */
+    /* flex-direction: row; Removed, defined in base */
+    width: 100%; /* Reintroduce for desktop */
+    max-width: 900px; /* Reintroduce for desktop */
+    margin-top: 40px; /* Desktop margin */
+    border-top: 1px solid #d6d6e7; /* Desktop border */
+    padding-top: 20px; /* Desktop padding */
+    justify-content: space-around; /* Desktop distribution */
+    align-items: center; /* Desktop alignment */
+  }
+  .timeline-nav-item {
+    margin: 0; /* Remove horizontal margin for desktop */
+  }
+}
+@media (min-width: 1200px) {
+  .timeline-header {
+    width: 85%;
+    display: flex; /* Use flexbox for horizontal alignment */
+    flex-direction: row; /* Align children horizontally */
+    justify-content: space-between; /* Space title and description */
+    align-items: flex-start; /* Align items to the top */
+  }
+  .timeline-title {
+    position: relative; /* For absolute positioning of ::before */
+    display: flex; /* Make title a flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align items to the left */
+    font-size: 3em; /* Larger font size for very large screens */
+    padding-left: 20px; /* Space for the vertical line */
+  }
+  .timeline-title::before {
+    height: 120px;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    bottom: 0;
+    width: 2px;
+    background-color: white;
+  }
+  .timeline-title span {
+    margin-bottom: 0; /* Adjust spacing between lines of title */
+  }
+  .timeline-title span .highlight {
+    display: inline; /* Revert to inline as ::after is gone */
+    color: var(--violachiaro); /* Ensure highlight color is applied */
+  }
+  .timeline-desc {
+    max-width: 500px; /* Adjust max-width for larger screens */
+    margin-left: auto; /* Push description to the right */
+  }
+  .timeline-slider-container {
+    width: 90%; /* Even smaller on very large screens */
+    max-width: 1200px; /* Adjust max-width as needed */
+  }
+  .timeline-slider {
+    gap: 30px;
+    padding: 4px 0px;
+  }
+}
+.timeline-vignetta {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 12px auto 0 auto;
+  display: block;
+}
+
+/*-------------NEWS SECTION ------------*/
+.news-section {
+  position: relative;
+  background: var(--violascuro);
+  color: white;
+  padding: 40px 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.news-header {
+  width: 90vw;
+  max-width: 1000px;
+  margin-bottom: 24px;
+}
+.news-header .vertical-line{
+  width: 3px;                
+  height: 6% !important;             
+  background-color: white;
+  position: absolute;        
+  top: 40px;                
+  left: 10px; 
+}
+.news-title {
+  padding-left: 10px;
+  font-family: 'Helvetica Neue Bold';
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.1em;
+  line-height: 1.1;
+}
+.news-title .highlight {
+  font-family: 'Helvetica Neue Bold Italic';
+  color: var(--violachiaro);
+  font-weight: bold;
+  font-style: italic;
+}
+.news-desc {
+  font-size: 1.5rem;
+  color: white;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+.news-grid {
+  width: 90vw;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr; /* Revert to single column for desktop */
+  gap: 32px 24px;
+}
+.news-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.news-card-content {
+  flex: 1;
+}
+.news-card-title {
+  font-family: 'Helvetica Neue Bold';
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--verdemarino);
+  margin-bottom: 0.2em;
+}
+.news-card-desc {
+  font-size: 1.4rem;
+  color: white;
+}
+.news-card-logo {
+  width: 400px !important;
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+  border-radius: 8px;
+  margin-top: 12px;
+  display: block;
+}
+
+
+@media (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 32px 0;
+  }
+  .news-card-logo {
+    max-width: 60vw;
+    width: 120px;
+  }
+  .news-header .vertical-line{
+    height: 5% !important;
+    left: 4% !important;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .news-header {
+    width: 800px; /* Adjust width for desktop */
+    max-width: 800px;
+    margin: 0 auto 24px auto; /* Center and add bottom margin */
+    text-align: left; /* Align text to left */
+  }
+  .news-title {
+    font-size: 6rem; /* Adjust font size for desktop */
+    margin-bottom: 3rem;
+  }
+  .news-title .highlight  {
+    position: absolute;
+    margin-top: -1rem;
+    font-size: 3rem; /* Adjust font size for desktop */
+  }
+  .news-desc {
+    max-width: 900px; /* Limit width of description */
+    font-size: 1.8rem;
+  }
+  .news-grid {
+    grid-template-columns: 1fr; /* Revert to single column for desktop */
+    max-width: 800px; /* Limit width of the grid */
+    gap: 20px; /* Adjust gap between cards */
+  }
+  .news-card {
+    border-radius: 12px; /* Rounded corners */
+    display: flex; /* Use flexbox for content and logo */
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Space out content and logo */
+    align-items: center; /* Align items vertically */
+  }
+  .news-card-content {
+    flex: 1; /* Allow content to take available space */
+    padding-right: 20px; /* Space between text and logo */
+    max-width: 50%;
+  }
+  .news-card-title {
+    font-size: 3rem; /* Adjust title size for card */
+  }
+  .news-card-desc {
+    font-size: 1.6rem; /* Adjust description size for card */
+  }
+  .news-card-logo {
+    width: 400px; /* Smaller logo size for desktop */
+    height: auto;
+    margin-top: 0; /* Remove top margin */
+  }
+  .news-header .vertical-line{
+    height: 7.5% !important;
+    left: 15% !important;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .news-header .vertical-line{
+    height: 7.5% !important;
+    left: 18% !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .news-header .vertical-line{
+    height: 7.5% !important;
+    left: 22% !important;
+  }
+}
+
+
+/* --- VIGNETTA CUSTOM SCALATA --- */
+@media (min-width: 844px){
+.vignetta.desktop {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 100px;
+  padding: 200px 0 20px 0;
+  min-height: 350px;
+  position: relative;
+}
+
+.scienziato {
+  position: relative;
+  max-width: 260px;
+  text-align: center;
+}
+
+.scienziato img {
+  width: 100%;
+  max-width: 260px;
+}
+
+.fumetto.alto {
+  color: white;
+  padding: 20px 15px 20px 15px;
+  left: 0;
+  bottom: 90%;
+  left: 0;
+  transform: translateY(-50px);
+}
+
+.fumetto.basso {
+  color: white;
+  padding: 20px 15px 20px 15px;
+  right: 0;
+  bottom: 90%;
+  right: 0;
+  transform: translateY(-20px);
+}  
+
+.scienziato img {
+  width: 100%;
+  height: auto;
+}
+
+.fumetto {
+  color: white;
+  position: absolute;
+  background-color: var(--violascuro);
+  border: 1px solid white;
+  border-radius: 15px;
+  font-size: 22px; 
+  padding: 40px 20px 40px 20px;
+  max-width: 220px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+}
+
+.fumetto {
+  box-sizing: border-box;
+  max-width: 43vw;
+  font-size: 1.1rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 0 10px 0;
+}
+.fumetto.alto {
+  color: white;
+  padding-left: 4% !important;
+  margin-left: 20px;
+  margin-right: auto;
+  align-items: center;
+}
+.fumetto.basso {
+  color: white;
+  padding-left: 4% !important;
+  margin-left: auto;
+  margin-right: 20px;
+  align-items: center;
 }

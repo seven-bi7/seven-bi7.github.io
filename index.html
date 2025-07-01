@@ -14,149 +14,46 @@
 
   <script type="module">
     window.addEventListener('DOMContentLoaded', () => {
+
+      const pAE1 = document.getElementById('paragrafo-AE-1');
+      const pAE2 = document.getElementById('paragrafo-AE-2');
+      const pAE3 = document.getElementById('paragrafo-AE-3');
+      const pAE4 = document.getElementById('paragrafo-AE-4');
+
+      let data, texts;
+      let lang = "ita"; // "ita": italiano, "eng": english
       const request = new Request("testi.json", {
         headers: {
           'Accept': 'application/json'
         }
       });
-
-      let data, texts;
-      let lang = "ita"; // "ita": italiano, "eng": english
       let response = fetch(request)
         .then((response) => response.json())
         .then((json) => {
           data = json;
           texts = data[lang];
-          console.log(data);
           write();
           writeImages();
         })
         .catch(console.error);
 
-      // Elements to write text in
-      const nav1 = document.getElementById('nav-1');
-      const nav2 = document.getElementById('nav-2');
-      const nav3 = document.getElementById('nav-3');
-      const nav4 = document.getElementById('nav-4');
-      const nav5 = document.getElementById('nav-5');
-      const nav6 = document.getElementById('nav-6');
-      const cAE1 = document.getElementById('citazione-AE-1');
-      const pAE1 = document.getElementById('paragrafo-AE-1');
-      const pAE2 = document.getElementById('paragrafo-AE-2');
-      const pAE3 = document.getElementById('paragrafo-AE-3');
-      const pAE4 = document.getElementById('paragrafo-AE-4');
-      const tc1 = document.getElementById('titolo-cards-1');
-      const tc2 = document.getElementById('titolo-cards-2');
-      const whatIsTitolo = document.getElementById('what-is-titolo');
-      const whatIsSottotitolo = document.getElementById('what-is-sottotitolo');
-      const whatIsParagrafo1 = document.getElementById('what-is-paragrafo-1');
-      const whatIsParagrafo2 = document.getElementById('what-is-paragrafo-2');
-      const whatIsParagrafo3 = document.getElementById('what-is-paragrafo-3');
-      const whatIsParagrafo4 = document.getElementById('what-is-paragrafo-4');
-      const AAcitazione = document.getElementById('AA-citazione');
-      const AAtesto = document.getElementById('AA-testo');
-      const spiegazioneTitolo = document.getElementById('spiegazione-titolo');
-      const spiegazioneParagrafo1 = document.getElementById('spiegazione-paragrafo-1');
-      const spiegazioneParagrafo2 = document.getElementById('spiegazione-paragrafo-2');
-      const spiegazioneParagrafo3 = document.getElementById('spiegazione-paragrafo-3');
-      const spiegazioneParagrafo4 = document.getElementById('spiegazione-paragrafo-4');
-      const gattoSTitolo = document.getElementById('gattoS-titolo');
-      const gattoSSottotitolo = document.getElementById('gattoS-sottotitolo');
-      const gattoSParagrafo = document.getElementById('gattoS-paragrafo');
-      const storiaTitolo = document.getElementById('storia-titolo');
-      const storiaSottotitolo = document.getElementById('storia-sottotitolo');
-      const storia1935Titolo = document.getElementById('storia-1935-titolo');
-      const storia1935Paragrafo = document.getElementById('storia-1935-paragrafo');
-      const storia1935TitoloBis = document.getElementById('storia-1935-titolo-bis');
-      const storia1935ParagrafoBis = document.getElementById('storia-1935-paragrafo-bis');
-      const storia1964Titolo = document.getElementById('storia-1964-titolo');
-      const storia1964Paragrafo = document.getElementById('storia-1964-paragrafo');
-      const storia1981Titolo = document.getElementById('storia-1981-titolo');
-      const storia1981Paragrafo = document.getElementById('storia-1981-paragrafo');
-      const storia2000Titolo = document.getElementById('storia-2000-titolo');
-      const storia2000Paragrafo = document.getElementById('storia-2000-paragrafo');
-      const storia2022Titolo = document.getElementById('storia-2022-titolo');
-      const storia2022Paragrafo = document.getElementById('storia-2022-paragrafo');
-      const notizieTitolo = document.getElementById('notizie-titolo');
-      const notizieSottotitolo = document.getElementById('notizie-sottotitolo');
-      const notizieParagrafo = document.getElementById('notizie-paragrafo');
-      const physParagrafo = document.getElementById('phys-paragrafo');
-      const techExploristParagrafo = document.getElementById('tech-explorist-paragrafo');
-      const quantumInsiderParagrafo = document.getElementById('quantum-insider-paragrafo');
-
       // function to write all texts
       function write() {
-        nav1.innerHTML = texts["nav-1"];
-        nav2.innerHTML = texts["nav-2"];
-        nav3.innerHTML = texts["nav-3"];
-        nav4.innerHTML = texts["nav-4"];
-        nav5.innerHTML = texts["nav-5"];
-        nav6.innerHTML = texts["nav-6"];
-
-        cAE1.innerHTML = texts['citazione-AE'];
-
-        pAE1.innerHTML = texts["paragrafo-AE-1"];
         if (window.innerWidth > 768) {
           pAE2.style.display = "none";
-          pAE3.innerHTML = texts["paragrafo-AE-3_desktop"];
-          pAE4.innerHTML = texts["paragrafo-AE-4_desktop"];
+          pAE3.innerHTML = data["responsive"]["paragrafo-AE-3_desktop"];
+          pAE4.innerHTML = data["responsive"]["paragrafo-AE-4_desktop"];
         } else {
-          pAE2.innerHTML = texts["paragrafo-AE-2"];
-          pAE3.innerHTML = texts["paragrafo-AE-3_mobile"];
+          pAE2.innerHTML = data["responsive"]["paragrafo-AE-2"];
+          pAE3.innerHTML = data["responsive"]["paragrafo-AE-3_mobile"];
         }
-
-        tc1.innerHTML = texts["titolo-cards-1"];
-        tc2.innerHTML = texts["titolo-cards-2"];
-
-        // What is entanglement section
-        whatIsTitolo.innerHTML = texts['what-is-titolo'];
-        whatIsSottotitolo.innerHTML = texts['what-is-sottotitolo'];
-        whatIsParagrafo1.innerHTML = texts['what-is-paragrafo-1'];
-        whatIsParagrafo2.innerHTML = texts['what-is-paragrafo-2'];
-        whatIsParagrafo3.innerHTML = texts['what-is-paragrafo-3'];
-        whatIsParagrafo4.innerHTML = texts['what-is-paragrafo-4'];
-
-        // AA citation and text
-        AAcitazione.innerHTML = texts['AA-citazione'];
-        AAtesto.innerHTML = texts['AA-testo'];
-
-        // Explanation section
-        spiegazioneTitolo.innerHTML = texts['spiegazione-titolo'];
-        spiegazioneParagrafo1.innerHTML = texts['spiegazione-paragrafo-1'];
-        spiegazioneParagrafo2.innerHTML = texts['spiegazione-paragrafo-2'];
-        spiegazioneParagrafo3.innerHTML = texts['spiegazione-paragrafo-3'];
-        spiegazioneParagrafo4.innerHTML = texts['spiegazione-paragrafo-4'];
-
-        // Schrödinger's cat section
-        gattoSTitolo.innerHTML = texts['gattoS-titolo'];
-        gattoSSottotitolo.innerHTML = texts['gattoS-sottotitolo'];
-        gattoSParagrafo.innerHTML = texts['gattoS-paragrafo'];
-
-        // History section
-        storiaTitolo.innerHTML = texts['storia-titolo'];
-        storiaSottotitolo.innerHTML = texts['storia-sottotitolo'];
-        storia1935Titolo.innerHTML = texts['storia-1935-titolo'];
-        storia1935Paragrafo.innerHTML = texts['storia-1935-paragrafo'];
-        storia1935TitoloBis.innerHTML = texts['storia-1935-titolo-bis'];
-        storia1935ParagrafoBis.innerHTML = texts['storia-1935-paragrafo-bis'];
-        storia1964Titolo.innerHTML = texts['storia-1964-titolo'];
-        storia1964Paragrafo.innerHTML = texts['storia-1964-paragrafo'];
-        storia1981Titolo.innerHTML = texts['storia-1981-titolo'];
-        storia1981Paragrafo.innerHTML = texts['storia-1981-paragrafo'];
-        storia2000Titolo.innerHTML = texts['storia-2000-titolo'];
-        storia2000Paragrafo.innerHTML = texts['storia-2000-paragrafo'];
-        storia2022Titolo.innerHTML = texts['storia-2022-titolo'];
-        storia2022Paragrafo.innerHTML = texts['storia-2022-paragrafo'];
-
-        // News section
-        notizieTitolo.innerHTML = texts['notizie-titolo'];
-        notizieSottotitolo.innerHTML = texts['notizie-sottotitolo'];
-        notizieParagrafo.innerHTML = texts['notizie-paragrafo'];
-
-        // Additional paragraphs
-        physParagrafo.innerHTML = texts['phys-paragrafo'];
-        techExploristParagrafo.innerHTML = texts['tech-explorist-paragrafo'];
-        quantumInsiderParagrafo.innerHTML = texts['quantum-insider-paragrafo'];
+        
+        for (const [key, value] of Object.entries(texts)) {
+          const elem = document.getElementById(key);
+          if (elem) {
+            elem.innerHTML = value;
+          }
+        }
       }
 
       function writeImages() {
@@ -182,39 +79,39 @@
 <body>
   <script src="scripts/nav.js"></script>
   <!-- NAVBAR-->
-  <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+  <nav id="mainNavbar" class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item px-3" href="">
+      <a class="navbar-item brand-logo px-3" href="">
         7bit+1
       </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
       </a>
     </div>
     <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-start">
-        <a id="nav-1" class="navbar-item" href="#titolo-cards"></a>
-        <a id="nav-2" class="navbar-item"></a>
-        <a id="nav-3" class="navbar-item"></a>
-        <a id="nav-4" class="navbar-item"></a>
-        <a id="nav-5" class="navbar-item"></a>
-        <a id="nav-6" class="navbar-item"></a>
-      </div>
       <div class="navbar-end">
-        <a id="button-lang" class="navbar-item">
-          <strong>ITA/ENG</strong>
-        </a>
+        <a id="nav-1" class="navbar-item nav-link" href="#titolo-cards"></a>
+        <a id="nav-2" class="navbar-item nav-link" href="#entanglement"></a>
+        <a id="nav-3" class="navbar-item nav-link" href="#spiegazione"></a>
+        <a id="nav-4" class="navbar-item nav-link" href="#gatto-schrodinger"></a>
+        <a id="nav-5" class="navbar-item nav-link" href="#navbar5"></a>
+        <a id="nav-6" class="navbar-item nav-link" href="#navbar6"></a>
+        <div class="navbar-item">
+          <div id="button-lang" class="lang-toggle">
+            <span id="lang-ita" class="lang-option active">ITA</span> /
+            <span id="lang-eng" class="lang-option">ENG</span>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
   <!-- IMMAGINE MULTICOLORE TITOLO -->
-  <img id="img-titolo" src="images/iniziale.png" alt="titolo" />
+  <img id="img-titolo" src="images/img1-p1.png" alt="titolo" />
   <!-- CITAZIONE A. E. -->
   <div id="citazione-AE">
-    <div class="vertical-line"></div>
+    <div class="linea-verticale1"></div>
     <div class="citazione">
       <h2 id="citazione-AE-1"></h2>
       <h6>Albert Einstein, 1935</h6>
@@ -224,15 +121,15 @@
   <div id="paragrafo-AE">
     <h3 id="paragrafo-AE-1"></h3>
     <h4 id="paragrafo-AE-2"></h4>
-    <div class="columns">
+    <div class="columns is-multiline">
       <p id="paragrafo-AE-3" class="column is-half"></p>
-      <p id="paragrafo-AE-4" class="columm is-half"></p>
+      <p id="paragrafo-AE-4" class="column is-half"></p>
     </div>
   </div>
   <!-- TITOLO CARDS -->
   <div id="titolo-cards">
-    <div class="vertical-line"></div>
     <div class="titolo-sottotitolo">
+      <div class="linea-verticale2"></div>
       <h2 id="titolo-cards-1"></h2>
       <h3 id="titolo-cards-2"></h3>
     </div>
@@ -241,77 +138,248 @@
   <div id="cards">
     <div class="slider">
       <div id="card-1" class="card">
-        <h3 class="card-title">Che cos'è un atomo ?</h3>
-        <h6 class="def">(dal greco átouoç átomos: indivisibile)</h6>
-        <h4 class="card-subtitle">Ogni cosa nel mondo è fatta di atomi, ¡ "mattoncini" fondamentali della materia.</h4>
-        <p class="card-p">Un atomo è una particella piccolissima, formata da un nucleo centrale (composto da protoni e neutroni) e da
-          uno o più elettroni che ruotano attorno.
-          Anche se minuscoli, gli atomi determinano tutte le proprietà della materia e quando andiamo a studiarli da
-          vicino iniziano a comportarsi in modi sorprendenti.</p>
+        <h3 class="card-title" id="card-1-titolo"></h3>
+        <h6 class="def" id="card-1-def"></h6>
+        <h4 class="card-subtitle" id="card-1-sottotitolo"></h4>
+        <p class="card-p" id="card-1-paragrafo"></p>
       </div>
       <div id="card-2" class="card">
-        <h3 class="card-title">Il ruolo <br>dell'osservatore</h3>
-        <h4 class="card-subtitle">In fisica quantistica, osservare una particella non è un atto passivo: cambia ciò che accade.</h4>
-        <p class="card-p">Finché una particella non viene osservata o misurata, il suo stato rimane indefinito o meglio, è una somma di
-          tutti i possibili stati. Quando interveniamo con una misura, facciamo "collassare" questa incertezza in un
-          solo risultato. È come se la realtà si definisse solo nel momento in cui la guardiamo.</p>
+        <h3 class="card-title" id="card-2-titolo"></h3>
+        <h4 class="card-subtitle" id="card-2-sottotitolo"></h4>
+        <p class="card-p" id="card-2-paragrafo"></p>
       </div>
       <div id="card-3" class="card">
-        <h3 class="card-title">Il principio di<br>sovrapposizione</h3>
-        <h4 class="card-subtitle">Una particella quantistica può trovarsi in più stati contemporaneamente, fino a quando non la osserviamo.
-        </h4>
-        <p class="card-p">Immagina di lanciare una moneta.
-          Prima che cada, non sai se sarà testa o croce. Ma in quantistica, prima di
-          "guardare", è entrambe le cose allo stesso tempo. È questo il significato di
-          "sovrapposizione": una particella può essere in più stati o luoghi contemporaneamente.
-          Solo l'osservazione la costringe a scegliere uno stato preciso.</p>
+        <h3 class="card-title" id="card-3-titolo"></h3>
+        <h4 class="card-subtitle" id="card-3-sottotitolo"></h4>
+        <p class="card-p" id="card-3-paragrafo"></p>
       </div>
       <div id="card-4" class="card">
-        <h3 class="card-title">Cos'è uno stato<br>quantico?</h3>
-        <h4 class="card-subtitle">Lo stato quantico descrive tutto ciò che sappiamo su una particella: posizione, energia, direzione...</h4>
-        <p class="card-p">In fisica classica, uno stato è un numero preciso: un oggetto è qui, si muove così, ha questa energia.
-          Ma nel mondo quantistico, uno stato è rappresentato da una funzione d'onda, una descrizione matematica che
-          contiene tutte le possibili informazioni su dove si trova e come si comporta la particella.
-          È come un "menu di possibilità" che si aggiorna quando misuriamo qualcosa.</p>
+        <h3 class="card-title" id="card-4-titolo"></h3>
+        <h4 class="card-subtitle" id="card-4-sottotitolo"></h4>
+        <p class="card-p" id="card-4-paragrafo"></p>
       </div>
       <div id="card-5" class="card">
-        <h3 class="card-title">La velocità<br>della luce</h3>
-        <h6 class="def">(La velocità della luce è: 299.792.458 metri al secondo)</h6>
-        <h4 class="card-subtitle">L'entanglement sembra muoversi più veloce della luce.</h4>
-        <p class="card-p">La teoria della relatività di Einstein ci dice che nessuna informazione può viaggiare più veloce della luce.
-          Eppure, quando due particelle sono entangled, la misura di una influenza istantaneamente l'altra, anche a
-          distanze enormi. Non c'è trasmissione visibile, ma un legame profondo tra i loro stati. Questo ha fatto
-          discutere per decenni i fisici: Einstein lo chiamava <strong>"azione fantasma a distanza"</strong>.</p>
+        <h3 class="card-title" id="card-5-titolo"></h3>
+        <h6 class="def" id="card-5-def"></h6>
+        <h4 class="card-subtitle" id="card-5-sottotitolo"></h4>
+        <p class="card-p" id="card-5-paragrafo"></p>
       </div>
     </div>
   </div>
+
   <!-- IMMAGINE GATTO STUDIOSO -->
-  <img id="img-sotto-cards" src="images/sotto-cards.png" alt="gatto studioso" />
+  <img id="img-sotto-cards" src="images/img2-p1.png" alt="gatto studioso" />
+
+  <!-- PARTE MARIA -->
+  <section class="entanglement" id="entanglement">
+    <h1 id="what-is-titolo"></h1>
+    <h3 class="sottotitolo3" id="what-is-sottotitolo"></h3>
+    <!-- PRIMO BLOCCO: SPIEGAZIONE -->
+    <div class="first-block">
+      <div class="text">
+        <p id="what-is-paragrafo">
+        </p>
+      </div>
+      <div class="image">
+        <img id="img-what-is" alt="Graphical representation of entanglement" />
+      </div>
+    </div>
+
+    <!-- SECONDO BLOCCO: ALAIN ASPECT -->
+    <div class="second-block">
+      <div class="image">
+        <img id="img-AA" alt="Alain Aspect with a cat on his head" />
+      </div>
+      <div class="quote">
+        <p id="AA-citazione">
+        </p>
+        <p class="author">Alain Aspect,</p>
+        <p class="author_subtitle" id="AA-testo"></p>
+      </div>
+    </div>
+
+    <!-- TERZO BLOCCO: SPIEGAZIONE -->
+    <div class="third-block" id="spiegazione">
+      <h1 class="vertical-title" id="spiegazione-titolo"></h1>
+      <div class="vertical-line1"></div>
+      <div class="text">
+        <p id="spiegazione-paragrafo">
+        </p>
+      </div>
+      <div class="image">
+        <img id="img-spiegazione" alt="Cat writing on blackboard" />
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- PARTE FABIO -->
+
   <!-- GATTO SCHRODINGER -->
   <div id="gatto-schrodinger">
-    <div class="sopra">
+    <div class="sopra" id="navbar4">
       <img class="img-sopra" src="images/GSp1.png" />
     </div>
     <div class="sotto">
       <div class="container">
         <div class="vertical-line"></div>
         <div class="titolo-sottotitolo">
-          <h2 id="titolo-gs-1">Il gatto di</h2>
-          <h3 id="titolo-gs-2">Schrodinger</h3>
+          <h2 id="gattoS-titolo">Il gatto di</h2>
+          <h3 id="gattoS-sottotitolo">Schrodinger</h3>
         </div>
       </div>
-      <p>
-        Il paradosso "Il gatto di Schrödinger" è un esperimento mentale ideato nel 1935 dal fisico teorico Erwin
-        Schrödinger per illustrare quanto siano strane le implicazioni della meccanica quantistica. Si immagina un gatto
-        chiuso in una scatola insieme a un meccanismo letale attivato dal decadimento di un atomo radioattivo: se
-        l'atomo decade, il veleno si libera e il gatto muore; se non decade, il gatto resta vivo. Secondo la fisica
-        quantistica, finché non si apre la scatola per osservare, l'atomo è in una sovrapposizione di stati, quindi
-        anche il gatto è sia vivo che e morto.
-        Schrödinger usò questo paradosso per criticare l'idea che un sistema resti in uno stato indefinito finché non
-        viene osservato, mostrando i limiti della teoria quantistica.
+      <p id="gattoS-paragrafo">
       </p>
     </div>
   </div>
+  <!-- SECONDA SEZIONE: STORIA E TIMELINE -->
+  <section class="timeline-section" id="navbar5">
+    <!-- Titolo e descrizione -->
+    <div class="timeline-header">
+      <div class="timeline-title">
+        <span class="title-first-line" id="storia-titolo"></span><br>
+      </div>
+      <div class="timeline-desc" id="storia-istruzioni">
+      </div>
+    </div>
+    <!-- SLIDER TIMELINE -->
+    <div class="timeline-slider-container">
+      <div class="timeline-slider">
+        <div class="timeline-card" data-year="1935-1">
+          <div class="timeline-card-content">
+            <div class="timeline-card-year">1935</div>
+            <div class="timeline-card-title" id="storia-1935-titolo"></div>
+            <div class="timeline-card-description" id="storia-1935-paragrafo">
+            </div>
+          </div>
+        </div>
+        <div class="timeline-card" data-year="1935-2">
+          <div class="timeline-card-content">
+            <div class="timeline-card-year">1935</div>
+            <div class="timeline-card-title"  id="storia-1935-titolo-bis"></div>
+            <div class="timeline-card-description" id="storia-1935-paragrafo-bis">
+            </div>
+          </div>
+        </div>
+        <div class="timeline-card" data-year="1964">
+          <div class="timeline-card-content">
+            <div class="timeline-card-year">1964</div>
+            <div class="timeline-card-title" id="storia-1964-titolo"></div>
+            <div class="timeline-card-description" id="storia-1964-paragrafo">
+            </div>
+          </div>
+        </div>
+        <div class="timeline-card" data-year="1981">
+          <div class="timeline-card-content">
+            <div class="timeline-card-year">1981</div>
+            <div class="timeline-card-title" id="storia-1981-titolo"></div>
+            <div class="timeline-card-description" id="storia-1981-paragrafo">
+            </div>
+          </div>
+        </div>
+        <div class="timeline-card" data-year="2000">
+          <div class="timeline-card-content">
+            <div class="timeline-card-year">2000</div>
+            <div class="timeline-card-title" id="storia-2000-titolo"></div>
+            <div class="timeline-card-description" id="storia-2000-paragrafo">           
+            </div>
+          </div>
+        </div>
+        <div class="timeline-card" data-year="2022">
+          <div class="timeline-card-content">
+            <div class="timeline-card-year">2022</div>
+            <div class="timeline-card-title" id="storia-2022-titolo"></div>
+            <div class="timeline-card-description" id="storia-2022-paragrafo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-nav-line">
+      <div class="timeline-nav-item" data-year="1935-1">1935</div>
+      <div class="timeline-nav-item" data-year="1964">1964</div>
+      <div class="timeline-nav-item" data-year="1981">1981</div>
+      <div class="timeline-nav-item" data-year="2000">2000</div>
+      <div class="timeline-nav-item" data-year="2022">2022</div>
+    </div>
+  </section>
+  <!-- VIGNETTA IN FONDO -->
+  <div class="vignetta desktop">
+    <div class="scienziato">
+      <img src="images/vignetta1.png" alt="Einstein">
+      <div class="fumetto alto" id="vignetta-AE"></div>
+    </div>
+    <div class="scienziato">
+      <div class="fumetto basso" id="vignetta-S"></div>
+      <img src="images/vignetta2.png" alt="Schrödinger">
+    </div>
+  </div>
+  <section class="news-section" id="navbar6">
+    <div class="news-header">
+      <div class="vertical-line"></div>
+      <div class="news-title" id="notizie-titolo">
+      </div>
+      <div class="news-desc" id="notizie-paragrafo">
+      </div>
+    </div>
+    <div class="news-grid">
+      <!-- Phys.org -->
+      <div class="news-card">
+        <div class="news-card-content">
+          <div class="news-card-title">Phys.org</div>
+          <div class="news-card-desc" id="phys-paragrafo">
+          </div>
+        </div>
+        <img src="images/logo_phys.org.png" alt="Phys.org" class="news-card-logo">
+      </div>
+      <!-- Tech Explorist -->
+      <div class="news-card">
+        <div class="news-card-content">
+          <div class="news-card-title">Tech Explorist</div>
+          <div class="news-card-desc" id="tech-explorist-paragrafo">
+          </div>
+        </div>
+        <img src="images/logo_tech_explorist.png" alt="Tech Explorist" class="news-card-logo">
+      </div>
+      <!-- Quantum Insider -->
+      <div class="news-card">
+        <div class="news-card-content">
+          <div class="news-card-title">Quantum Insider</div>
+          <div class="news-card-desc" id="quantum-insider-paragrafo">
+          </div>
+        </div>
+        <img src="images/logo_quantum.png" alt="Quantum Insider" class="news-card-logo">
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const timelineNavItems = document.querySelectorAll('.timeline-nav-item');
+      const timelineSlider = document.querySelector('.timeline-slider-container');
+      const timelineCards = document.querySelectorAll('.timeline-card');
+
+      timelineNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const targetYear = item.dataset.year;
+          const targetCard = document.querySelector(`.timeline-card[data-year="${targetYear}"]`);
+
+          if (targetCard && timelineSlider) {
+            // Calculate scroll position to center the card
+            const sliderRect = timelineSlider.getBoundingClientRect();
+            const cardRect = targetCard.getBoundingClientRect();
+
+            const scrollLeft = timelineSlider.scrollLeft + cardRect.left - sliderRect.left - (sliderRect.width / 2) + (cardRect.width / 2);
+
+            timelineSlider.scrollTo({
+              left: scrollLeft,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
