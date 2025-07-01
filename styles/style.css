@@ -280,6 +280,10 @@ strong {
     line-height: 1.5;
 }
 
+#paragrafo-AE-3 strong {
+    color: white;
+}
+
 @media screen and (max-width: 768px) {
     #paragrafo-AE-1 {
         font-size: 3rem;

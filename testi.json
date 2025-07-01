@@ -1,10 +1,16 @@
 {
     "responsive": {
-        "paragrafo-AE-3_mobile": "Albert Einstein definì l&apos;entanglement &quot;spooky action at a distance&quot; (azione spettrale a distanza) perché trovava inquietante che due particelle potessero mostrare risultati perfettamente correlati, anche se separate da enormi distanze, senza alcun segnale che viaggiasse tra loro <br><br>Secondo la meccanica quantistica, però, una volta che due particelle sono entangled, le misure su una determinano istantaneamente lo stato dell&apos;altra, indipendentemente dallo spazio che le separa. <br><br>Einstein pensava che ci dovesse essere qualche <strong>&quot;variabile nascosta&quot;</strong> a spiegare tutto. Oggi, invece, gli esperimenti lo smentiscono sistematicamente: l&apos;entanglement è reale, ed è uno degli aspetti più misteriosi e verificabili della fisica moderna.",
-        "paragrafo-AE-3_desktop": "Albert Einstein definì l&apos;entanglement &quot;spooky action at a distance&quot; (azione spettrale a distanza) perché trovava inquietante che due particelle potessero mostrare risultati perfettamente correlati, anche se separate da enormi distanze, senza alcun segnale che viaggiasse tra loro. Secondo la meccanica quantistica, però, una volta che due particelle sono entangled, le misure su",
-        "paragrafo-AE-4_desktop": "una determinano istantaneamente lo stato dell&apos;altra, indipendentemente dallo spazio che le separa. Einstein pensava che ci dovesse essere qualche &quot;variabile nascosta&quot; a spiegare tutto. Oggi, invece, gli esperimenti lo smentiscono sistematicamente: l&apos;entanglement è reale, ed è uno degli aspetti più misteriosi e verificabili della fisica moderna."
+        "ita": {
+            "paragrafo-AE-3_mobile": "Albert Einstein definì l&apos;entanglement &quot;spooky action at a distance&quot; (azione spettrale a distanza) perché trovava inquietante che due particelle potessero mostrare risultati perfettamente correlati, anche se separate da enormi distanze, senza alcun segnale che viaggiasse tra loro <br><br>Secondo la meccanica quantistica, però, una volta che due particelle sono entangled, le misure su una determinano istantaneamente lo stato dell&apos;altra, indipendentemente dallo spazio che le separa. <br><br>Einstein pensava che ci dovesse essere qualche <strong>&quot;variabile nascosta&quot;</strong> a spiegare tutto. Oggi, invece, gli esperimenti lo smentiscono sistematicamente: l&apos;entanglement è reale, ed è uno degli aspetti più misteriosi e verificabili della fisica moderna.",
+            "paragrafo-AE-3_desktop": "Albert Einstein definì l&apos;entanglement &quot;spooky action at a distance&quot; (azione spettrale a distanza) perché trovava inquietante che due particelle potessero mostrare risultati perfettamente correlati, anche se separate da enormi distanze, senza alcun segnale che viaggiasse tra loro. Secondo la meccanica quantistica, però, una volta che due particelle sono entangled, le misure su",
+            "paragrafo-AE-4_desktop": "una determinano istantaneamente lo stato dell&apos;altra, indipendentemente dallo spazio che le separa. Einstein pensava che ci dovesse essere qualche &quot;variabile nascosta&quot; a spiegare tutto. Oggi, invece, gli esperimenti lo smentiscono sistematicamente: l&apos;entanglement è reale, ed è uno degli aspetti più misteriosi e verificabili della fisica moderna."
+        },
+        "eng": {
+            "paragrafo-AE-3_mobile": "Albert Einstein called entanglement &quot;spooky action at a distance&quot; because he found it unsettling that two particles could show perfectly correlated results, even when separated by huge distances, without any signal traveling between them. <br><br>According to quantum mechanics, however, once two particles are entangled, measurements on one instantly determine the state of the other, regardless of the space between them. <br><br>Einstein believed there had to be some <strong>&quot;hidden variable&quot;</strong> to explain it all. Today, however, experiments consistently prove him wrong: entanglement is real, and it’s one of the most mysterious and verifiable aspects of modern physics.",
+            "paragrafo-AE-3_desktop": "Albert Einstein called entanglement &quot;spooky action at a distance&quot; because he found it unsettling that two particles could show perfectly correlated results, even when separated by huge distances, without any signal traveling between them. According to quantum mechanics, however, once two particles are entangled, measurements on",
+            "paragrafo-AE-4_desktop": "one instantly determine the state of the other, regardless of the space between them. Einstein believed there had to be some &quot;hidden variable&quot; to explain it all. Today, however, experiments consistently prove him wrong: entanglement is real, and it’s one of the most mysterious and verifiable aspects of modern physics."
+        }
     },
-
     "ita": {
         "nav-1": "Nozioni Basse",
         "nav-2": "Cos'è l'Entanglement",
@@ -12,54 +18,41 @@
         "nav-4": "Il gatto di Schrödinger",
         "nav-5": "Storia",
         "nav-6": "Nozioni",
-
         "citazione-AE-1": "&quot;Nessuna definizione <br>ragionevole di realtà <br>potrebbe permettere questo&quot;",
-
         "paragrafo-AE-1": "Lo sapevi che... ?",
         "paragrafo-AE-2": "Albert Einstein definì l'entanglement <br>&quot;spooky action at a distance&quot;",
-
         "titolo-cards-1": "Nozioni",
         "titolo-cards-2": "Base",
-
         "card-1-titolo": "Che cos'è un atomo ?",
         "card-1-def": "(dal greco átouoç átomos: indivisibile)",
         "card-1-sottotitolo": "Ogni cosa nel mondo è fatta di atomi, ¡ \"mattoncini\" fondamentali della materia.",
         "card-1-paragrafo": "Un atomo è una particella piccolissima, formata da un nucleo centrale (composto da protoni e neutroni) e da uno o più elettroni che ruotano attorno. Anche se minuscoli, gli atomi determinano tutte le proprietà della materia e quando andiamo a studiarli da vicino iniziano a comportarsi in modi sorprendenti.",
-        
         "card-2-titolo": "Il ruolo dell'osservatore",
         "card-2-def": "",
         "card-2-sottotitolo": "In fisica quantistica, osservare una particella non è un atto passivo: cambia ciò che accade.",
         "card-2-paragrafo": "Finché una particella non viene osservata o misurata, il suo stato rimane indefinito o meglio, è una somma di tutti i possibili stati. Quando interveniamo con una misura, facciamo \"collassare\" questa incertezza in un solo risultato. È come se la realtà si definisse solo nel momento in cui la guardiamo.",
-        
         "card-3-titolo": "Il principio di sovrapposizione",
         "card-3-def": "",
         "card-3-sottotitolo": "Una particella quantistica può trovarsi in più stati contemporaneamente, fino a quando non la osserviamo.",
         "card-3-paragrafo": "Immagina di lanciare una moneta. Se non osservi il risultato, può essere testa o croce. Solo quando osservi, il risultato diventa definitivo. Questo è il principio di sovrapposizione: la particella esiste in tutti i possibili stati finché non viene misurata.",
-        
         "card-4-titolo": "Cos'è uno stato quantico?",
         "card-4-def": "",
         "card-4-sottotitolo": "Lo stato quantico descrive tutto ciò che sappiamo su una particella.",
         "card-4-paragrafo": "In fisica classica, lo stato di un oggetto è definito univocamente. In fisica quantistica, invece, lo stato può essere una combinazione di diversi possibili risultati. Questo fenomeno è chiamato \"sovrapposizione di stati\" e è alla base delle tecnologie come il computer quantistico.",
-        
         "card-5-titolo": "La velocità della luce",
         "card-5-def": "(La velocità della luce è: 299.792.458 metri al secondo)",
         "card-5-sottotitolo": "L'entanglement sembra muoversi più veloce della luce.",
         "card-5-paragrafo": "La teoria della relatività di Einstein stabilisce che la velocità della luce è il limite massimo per la velocità di propagazione delle informazioni. Tuttavia, l'entanglement (o \"correlazione quantistica\") permette a due particelle di influenzarsi istantaneamente, anche se sono distanti. Questo fenomeno è stato verificato sperimentalmente, ma non viola la teoria della relatività perché non permette la trasmissione di informazioni più veloce della luce.",
-
         "what-is-titolo": "<span class='white'>What is </span> <span class='blue'>entanglement?</span",
         "what-is-sottotitolo": "&quot;Spooky action at distance&quot;",
         "what-is-paragrafo": "<strong>L’entanglement è uno dei fenomeni più affascinanti e misteriosi della meccanica quantistica.</strong><br /> Si verifica quando due o più particelle diventano parte di un unico sistema, così strettamente legate tra loro che il comportamento di una influenza sull’altra, anche se si trovano a enormi distanze. Nessun segnale viaggia tra le due. Eppure, i risultati restano collegati.<br /><br /> Questo è l’entanglement: una correlazione perfetta e istantanea tra le particelle, che va oltre lo spazio. Secondo la fisica classica, questo non dovrebbe essere possibile. Persino <strong>Einstein lo trovava inquietante</strong> e credeva che ci fossero informazioni “nascoste” che non avevamo ancora scoperto.<br /><br /> Nel tempo, numerosi esperimenti hanno dimostrato che <strong>l’entanglement non può essere spiegato da meccanismi classici o variabili nascoste locali.</strong><br /><br /> L’entanglement non è solo un curioso effetto teorico: è oggi al centro di tecnologie reali come il trasporto quantistico, la crittografia quantistica e i computer quantistici. Comprenderlo non significa solo avvicinarsi a <strong>uno dei più grandi misteri della natura</strong>, ma anche al futuro della scienza e della tecnologia.",
-
         "AA-citazione": "&quot;Gli esperimenti che abbiamo condotto hanno confermato che l'entanglement è una proprietà reale e fondamentale della natura. Le disuguaglianze di Bell sono state violate in modo chiaro e ripetibile L'entanglement non è più un'ipotesi teorica, ma un fenomeno sperimentale consolidato che apre le porte a tecnologie rivoluzionarie.&quot;",
         "AA-testo": "premio Nobel per la Fisica 2022",
-
         "spiegazione-titolo": "Spiegazione",
         "spiegazione-paragrafo": "Nel mondo della fisica quantistica, <strong>le particelle non hanno sempre proprietà ben definite</strong> finché non vengono misurate. Invece di trovarsi in uno stato preciso, esistono in una sovrapposizione di stati.<br><br> È proprio da questa strana logica che nasce l'entanglement. Quando due particelle interagiscono in modo molto stretto, per esempio perché vengono prodotte insieme in un processo fisico, possono entrare in uno stato condiviso.<br><br> Questo significa che, anche se separiamo le particelle fisicamente, l'informazione sul loro stato non può essere attribuita a una sola particella. Quando misuriamo una delle due particelle, lo stato dell'intero sistema quantistico &quot;collassa&quot;, cioè si aggiorna istantaneamente per rispettare le correlazioni definite durante l'entanglement.<br><br> È importante dire che <strong>non c’è alcun segnale che viaggia tra le particelle</strong>: la correlazione emerge non perché una particella &quot;comunica&quot; con l’altra, ma perché erano legate fin dall’inizio.<br><br> Oggi, grazie a esperimenti sempre più sofisticati, sappiamo che <strong>l’entanglement è un fenomeno reale</strong>, non un’illusione o un errore teorico.",
-
         "gattoS-titolo": "Il gatto di",
         "gattoS-sottotitolo": "Schrödinger",
         "gattoS-paragrafo": "Il paradosso &quot;Il gatto di Schrödinger&quot; è un esperimento mentale ideato nel 1935 dal fisico teorico Erwin Schrödinger per illustrare quanto siano strane le implicazioni della meccanica quantistica. Si immagina un gatto chiuso in una scatola insieme a un meccanismo letale attivato dal decadimento di un atomo radioattivo: se l'atomo decade, il veleno si libera e il gatto muore; se non decade, il gatto resta vivo. Secondo la fisica quantistica, finché non si apre la scatola per osservare, l'atomo è in una sovrapposizione di stati, quindi anche il gatto è sia vivo che e morto. Schrödinger usò questo paradosso per criticare l'idea che un sistema resti in uno stato indefinito finché non viene osservato, mostrando i limiti della teoria quantistica.",
-
         "storia-titolo": "Un po' di <br><span class='highlight'>storia</span>",
         "storia-istruzioni": "Scorri la linea temporale sottostante per scoprire gli eventi più importanti che hanno segnato la storia di questo spettacolare fenomeno quantistico.",
         "storia-1935-titolo": "Nasce il paradosso",
@@ -74,19 +67,15 @@
         "storia-2000-paragrafo": "La ricerca sull'entanglement quantistico progredisce, portando a scoperte sull'interazione tra particelle separate da grandi distanze.",
         "storia-2022-titolo": "Nobel per l'entanglement",
         "storia-2022-paragrafo": "Il Premio Nobel per la Fisica viene assegnato per gli esperimenti sull'entanglement, aprendo la strada a nuove tecnologie quantistiche.",
-        
         "vignetta-AE": "Non posso credere<br>che Dio giochi a dadi<br>con l'universo!",
         "vignetta-S": "Smettila! Non puoi<br>dire a Dio cosa fare<br>con i suoi dadi!",
-
         "notizie-titolo": "Notizie",
         "notizie-sottotitolo": "Vuoi restare aggiornato?",
         "notizie-paragrafo": "Qui sotto abbiamo raccolto una serie di link a fonti affidabili che seguono da vicino ricerche, scoperte ed evoluzioni legate al fenomeno dell'entanglement quantistico. Un modo per continuare a esplorare, anche dopo aver visitato il nostro sito.",
-
         "phys-paragrafo": "Phys.org è un sito internazionale di divulgazione scientifica che pubblica notizie aggiornate su fisica, tecnologia e ricerca. È una fonte autorevole e accessibile per chi vuole restare informato su scoperte e sviluppi scientifici, inclusa la fisica quantistica.",
         "tech-explorist-paragrafo": "Tech Explorist è un sito di notizie scientifiche e tecnologiche che racconta in modo chiaro le ultime scoperte e innovazioni. Copre anche temi complessi come l'entanglement quantistico, rendendoli comprensibili e attuali.",
         "quantum-insider-paragrafo": "The Quantum Insider è una piattaforma specializzata che segue da vicino il mondo della tecnologia quantistica. Offre notizie, analisi e aggiornamenti su ricerca, startup e applicazioni reali dell'entanglement e della computazione quantistica."
     },
-
     "eng": {
         "nav-1": "Basic Concepts",
         "nav-2": "What is Entanglement",
@@ -94,59 +83,64 @@
         "nav-4": "Schrödinger's Cat",
         "nav-5": "History",
         "nav-6": "Concepts",
-
-        "citazione-AE-1": "&quot;No reasonable  <br>definition of reality <br>could allow this&quot;",
-
-        "paragrafo-AE-1": "Did you know... ?",
+        "citazione-AE-1": "&quot;No reasonable <br>definition of reality <br>could allow this&quot;",
+        "paragrafo-AE-1": "Did you know...?",
         "paragrafo-AE-2": "Albert Einstein defined entanglement <br>&quot;spooky action at a distance&quot;",
-        "paragrafo-AE-3_mobile": "Albert Einstein defined entanglement &quot;spooky action at a distance&quot; (spooky action at a distance) because he found it unsettling that two particles could show perfectly correlated results, even if separated by vast distances, without any signal traveling between them <br><br>According to quantum mechanics, however, once two particles are entangled, measurements on one instantly determine the state of the other, regardless of the space separating them. <br><br>Einstein thought there must be some &quot;hidden variable&quot; to explain everything. Today, however, experiments systematically refute this: entanglement is real, and it is one of the most mysterious and verifiable aspects of modern physics.",
-        "paragrafo-AE-3_desktop": "Albert Einstein defined entanglement &quot;spooky action at a distance&quot; (spooky action at a distance) because he found it unsettling that two particles could show perfectly correlated results, even if separated by vast distances, without any signal traveling between them. According to quantum mechanics, however, once two particles are entangled, measurements on one",
-        "paragrafo-AE-4_desktop": "instantly determine the state of the other, regardless of the space separating them. Einstein thought there must be some &quot;hidden variable&quot; to explain everything. Today, however, experiments systematically refute this: entanglement is real, and it is one of the most mysterious and verificable aspects of modern physics.",
-
         "titolo-cards-1": "Concepts",
         "titolo-cards-2": "Basics",
-
+        "card-1-titolo": "What is an atom?",
+        "card-1-def": "(from Greek átouoç átomos: indivisible)",
+        "card-1-sottotitolo": "Everything in the world is made of atoms, the fundamental \"building blocks\" of matter.",
+        "card-1-paragrafo": "An atom is a tiny particle, made up of a central nucleus (composed of protons and neutrons) and one or more electrons orbiting around it. Even though they’re tiny, atoms determine all the properties of matter, and when we study them closely, they start to behave in surprising ways.",
+        "card-2-titolo": "The observer’s role",
+        "card-2-def": "",
+        "card-2-sottotitolo": "In quantum physics, observing a particle isn’t passive: it changes what happens.",
+        "card-2-paragrafo": "Until a particle is observed or measured, its state remains undefined—or rather, a sum of all possible states. When we measure it, we make this uncertainty “collapse” into a single result. It's as if reality only defines itself when we look at it.",
+        "card-3-titolo": "The superposition principle",
+        "card-3-def": "",
+        "card-3-sottotitolo": "A quantum particle can be in multiple states at once—until we observe it.",
+        "card-3-paragrafo": "Imagine tossing a coin. If you don’t look at the result, it can be heads or tails. Only when you observe it does the result become definite. This is the superposition principle: the particle exists in all possible states until it is measured.",
+        "card-4-titolo": "What is a quantum state?",
+        "card-4-def": "",
+        "card-4-sottotitolo": "The quantum state describes everything we know about a particle.",
+        "card-4-paragrafo": "In classical physics, the state of an object is uniquely defined. In quantum physics, however, the state can be a combination of several possible outcomes. This phenomenon is called “state superposition” and it’s the basis for technologies like quantum computing.",
+        "card-5-titolo": "The speed of light",
+        "card-5-def": "(The speed of light is: 299,792,458 meters per second)",
+        "card-5-sottotitolo": "Entanglement seems to move faster than light.",
+        "card-5-paragrafo": "Einstein’s theory of relativity states that the speed of light is the maximum speed for information transfer. However, entanglement (or “quantum correlation”) allows two particles to influence each other instantly, even if far apart. This has been experimentally verified, but doesn’t violate relativity because it doesn’t transmit information faster than light.",
         "what-is-titolo": "<span class='white'>What is </span> <span class='blue'>entanglement?</span",
-        "what-is-sottotitolo": "&quot;No reasonable definition of reality could allow this&quot;",
-        
-        "AA-citazione": "&quot;No reasonable definition of reality could allow this&quot;",
-        "AA-testo": "Albert Einstein's skepticism about entanglement led to the development of quantum theory and the eventual confirmation of its validity through experiments.",
-        
+        "what-is-sottotitolo": "&quot;Spooky action at distance&quot;",
+        "what-is-paragrafo": "<strong>Entanglement is one of the most fascinating and mysterious phenomena in quantum mechanics.</strong><br /> It occurs when two or more particles become part of a single system, so tightly connected that the behavior of one affects the other—even over vast distances. No signal travels between them. And yet, the results remain linked.<br /><br /> This is entanglement: a perfect and instantaneous correlation between particles that transcends space. According to classical physics, this shouldn’t be possible. Even <strong>Einstein found it unsettling</strong> and believed there were “hidden” variables yet to be discovered.<br /><br /> Over time, many experiments have shown that <strong>entanglement cannot be explained by classical mechanisms or local hidden variables.</strong><br /><br /> Entanglement isn’t just a curious theoretical effect: it’s now central to real technologies like quantum teleportation, quantum cryptography, and quantum computers. Understanding it means getting closer not only to <strong>one of nature’s greatest mysteries</strong>, but also to the future of science and technology.",
+        "AA-citazione": "&quot;The experiments we conducted confirmed that entanglement is a real and fundamental property of nature. Bell’s inequalities have been clearly and repeatedly violated. Entanglement is no longer a theoretical hypothesis but a well-established experimental phenomenon that opens the door to revolutionary technologies.&quot;",
+        "AA-testo": "Nobel Prize in Physics 2022",
         "spiegazione-titolo": "Explanation",
-        "spiegazione-paragrafo-1": "In quantum mechanics, particles can exist in a superposition of states until measured. When two particles are entangled, their quantum states are linked, so the measurement of one instantly influences the state of the other.",
-        "spiegazione-paragrafo-2": "This phenomenon violates the classical notion of locality, where objects are only influenced by their immediate surroundings. Entanglement suggests that particles can be correlated instantaneously across vast distances.",
-        "spiegazione-paragrafo-3": "The concept of entanglement was first formalized by Einstein, Podolsky, and Rosen in 1935, leading to the EPR paradox. This paradox challenged the completeness of quantum mechanics and sparked debates about hidden variables.",
-        "spiegazione-paragrafo-4": "Bell's theorem and subsequent experiments, such as those by Alain Aspect in 1982, have confirmed that entanglement is a real phenomenon, ruling out local hidden variable theories and supporting the non-local nature of quantum mechanics.",
-        "spiegazione-paragrafo-5": "Entanglement is not limited to particles; it can also occur in larger systems, such as photons, atoms, and even molecules, demonstrating its universality in quantum physics.",
-        
-        "gattoS-titolo": "Schrödinger's Cat",
-        "gattoS-sottotitolo": "&quot;No reasonable definition of reality could allow this&quot;",
-        "gattoS-paragrafo": "Schrödinger's cat is a thought experiment that illustrates the paradoxes of quantum mechanics. Imagine a cat sealed in a box with a radioactive atom, a Geiger counter, and a vial of poison. If the atom decays, the Geiger counter triggers the release of the poison, killing the cat. According to quantum mechanics, until the box is opened, the cat is simultaneously both alive and dead, existing in a superposition of states. This paradox highlights the strange nature of quantum superposition and the role of observation in collapsing quantum states.",
-        
-        "storia-titolo": "History",
-        "storia-sottotitolo": "The Evolution of Quantum Entanglement",
-        "storia-1935-titolo": "The Birth of the Paradox",
-        "storia-1935-paragrafo": "In 1935, Albert Einstein, Boris Podolsky, and Nathan Rosen published a paper challenging the completeness of quantum mechanics. They proposed the EPR paradox, arguing that quantum mechanics was incomplete because it allowed for &quot;spooky action at a distance,&quot; which they considered a flaw in the theory.",
-        "storia-1935-titolo-bis": "The Hidden Variables Debate",
-        "storia-1935-paragrafo-bis": "Einstein believed that quantum mechanics was missing hidden variables that would explain the apparent non-local correlations. This led to decades of debate about the nature of reality and the foundations of quantum theory.",
-        "storia-1964-titolo": "Bell's Theorem",
-        "storia-1964-paragrafo": "In 1964, John Bell formulated Bell's theorem, which provided a way to test the predictions of quantum mechanics against local hidden variable theories. Bell's inequalities showed that quantum mechanics could produce correlations that classical theories could not explain.",
-        "storia-1981-titolo": "Experimental Verification",
-        "storia-1981-paragrafo": "Alain Aspect and his team conducted experiments in 1982 that confirmed the violation of Bell's inequalities, proving that quantum entanglement is a real phenomenon and that local hidden variables cannot explain the observed correlations.",
-        "storia-2000-titolo": "Entanglement at a Distance",
-        "storia-2000-paragrafo": "Advances in technology allowed scientists to create and manipulate entangled particles over vast distances. These experiments demonstrated the non-local nature of quantum mechanics and paved the way for applications in quantum communication and computing.",
-        "storia-2022-titolo": "Nobel Prize for Entanglement",
-        "storia-2022-paragrafo": "In 2022, the Nobel Prize in Physics was awarded to Alain Aspect, John F. Clauser, and Anton Zeilinger for their groundbreaking experiments with entangled photons. Their work confirmed the reality of entanglement and its potential for revolutionary applications in quantum technology.",
-        
-        "notizie-titolo": "Latest News",
-        "notizie-sottotitolo": "Advancements in Quantum Entanglement",
-        "notizie-paragrafo": "Recent developments in quantum entanglement include the creation of quantum networks, the demonstration of entanglement over thousands of kilometers, and the development of quantum repeaters to overcome distance limitations. These advancements are bringing us closer to a future of secure communication and quantum computing.",
-        
-        "phys-paragrafo": "Quantum entanglement is a fundamental aspect of quantum mechanics and has been experimentally verified through numerous studies. It continues to challenge our understanding of reality and has inspired new areas of research in theoretical and applied physics.",
-        "tech-explorist-paragrafo": "Entanglement is not just a theoretical curiosity; it has practical applications in quantum computing, cryptography, and teleportation. Researchers are exploring ways to harness entanglement for secure communication and efficient computation.",
-        "quantum-insider-paragrafo": "The study of entanglement is at the forefront of modern physics. Ongoing research aims to understand its implications for quantum gravity, information theory, and the nature of space-time itself."
+        "spiegazione-paragrafo": "In the world of quantum physics, <strong>particles don’t always have well-defined properties</strong> until they are measured. Instead of being in a specific state, they exist in a superposition of states.<br><br> It is precisely from this strange logic that entanglement arises. When two particles interact very closely—such as being created together in a physical process—they can enter a shared state.<br><br> This means that even if we separate the particles physically, the information about their state cannot be assigned to just one. When we measure one of the two particles, the state of the entire quantum system “collapses,” meaning it updates instantly to respect the correlations defined during entanglement.<br><br> It’s important to say that <strong>no signal travels between the particles</strong>: the correlation emerges not because one “communicates” with the other, but because they were linked from the start.<br><br> Today, thanks to increasingly sophisticated experiments, we know that <strong>entanglement is a real phenomenon</strong>, not an illusion or theoretical error.",
+        "gattoS-titolo": "Schrödinger's",
+        "gattoS-sottotitolo": "Cat",
+        "gattoS-paragrafo": "The “Schrödinger’s Cat” paradox is a thought experiment devised in 1935 by theoretical physicist Erwin Schrödinger to illustrate how strange the implications of quantum mechanics are. It imagines a cat in a box with a lethal mechanism triggered by the decay of a radioactive atom: if the atom decays, poison is released and the cat dies; if it doesn’t, the cat lives. According to quantum physics, until the box is opened, the atom is in a superposition of states—so the cat is both alive and dead. Schrödinger used this paradox to criticize the idea that a system remains in an undefined state until observed, showing the limits of quantum theory.",
+        "storia-titolo": "A bit of <br><span class='highlight'>history</span>",
+        "storia-istruzioni": "Scroll the timeline below to discover the most important events that shaped the history of this spectacular quantum phenomenon.",
+        "storia-1935-titolo": "The paradox is born",
+        "storia-1935-paragrafo": "Erwin Schrödinger introduces the cat thought experiment to highlight quantum mechanics’ implications on reality.",
+        "storia-1935-titolo-bis": "Schrödinger’s response",
+        "storia-1935-paragrafo-bis": "Schrödinger himself offers a reply to the paradox, trying to clarify the limits and interpretations of his theory.",
+        "storia-1964-titolo": "Bell’s inequalities",
+        "storia-1964-paragrafo": "John Bell introduces his inequalities to experimentally test the concepts of locality and realism in quantum mechanics.",
+        "storia-1981-titolo": "Experimental tests",
+        "storia-1981-paragrafo": "The first significant experiments are conducted, confirming quantum predictions and violating Bell’s inequalities.",
+        "storia-2000-titolo": "Remote entanglement",
+        "storia-2000-paragrafo": "Research on quantum entanglement progresses, leading to discoveries about interaction between far-apart particles.",
+        "storia-2022-titolo": "Entanglement Nobel",
+        "storia-2022-paragrafo": "The Nobel Prize in Physics is awarded for entanglement experiments, paving the way for new quantum technologies.",
+        "vignetta-AE": "I can’t believe<br>God plays dice<br>with the universe!",
+        "vignetta-S": "Stop it! You can’t<br>tell God what to do<br>with His dice!",
+        "notizie-titolo": "News",
+        "notizie-sottotitolo": "Want to stay updated?",
+        "notizie-paragrafo": "Below we’ve gathered a series of links to reliable sources closely following research, discoveries, and developments related to quantum entanglement. A way to keep exploring—even after visiting our site.",
+        "phys-paragrafo": "Phys.org is an international science news site that publishes updated content on physics, technology, and research. It’s an authoritative and accessible source for those who want to stay informed about discoveries and scientific developments, including quantum physics.",
+        "tech-explorist-paragrafo": "Tech Explorist is a science and technology news site that clearly explains the latest discoveries and innovations. It also covers complex topics like quantum entanglement, making them understandable and current.",
+        "quantum-insider-paragrafo": "The Quantum Insider is a specialized platform that closely follows the world of quantum technology. It offers news, analysis, and updates on research, startups, and real-world applications of entanglement and quantum computing."
     },
-
     "images": {
         "img-titolo": "images/img1-p1.png",
         "img-sotto-cards": "images/img2-p1.png",

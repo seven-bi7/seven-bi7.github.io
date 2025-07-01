@@ -41,11 +41,11 @@
       function write() {
         if (window.innerWidth > 768) {
           pAE2.style.display = "none";
-          pAE3.innerHTML = data["responsive"]["paragrafo-AE-3_desktop"];
-          pAE4.innerHTML = data["responsive"]["paragrafo-AE-4_desktop"];
+          pAE3.innerHTML = data["responsive"][lang]["paragrafo-AE-3_desktop"];
+          pAE4.innerHTML = data["responsive"][lang]["paragrafo-AE-4_desktop"];
         } else {
-          pAE2.innerHTML = data["responsive"]["paragrafo-AE-2"];
-          pAE3.innerHTML = data["responsive"]["paragrafo-AE-3_mobile"];
+          pAE2.innerHTML = data["responsive"][lang]["paragrafo-AE-2"];
+          pAE3.innerHTML = data["responsive"][lang]["paragrafo-AE-3_mobile"];
         }
         
         for (const [key, value] of Object.entries(texts)) {
@@ -170,7 +170,6 @@
   <!-- IMMAGINE GATTO STUDIOSO -->
   <img id="img-sotto-cards" src="images/img2-p1.png" alt="gatto studioso" />
 
-  <!-- PARTE MARIA -->
   <section class="entanglement" id="entanglement">
     <h1 id="what-is-titolo"></h1>
     <h3 class="sottotitolo3" id="what-is-sottotitolo"></h3>
@@ -211,10 +210,6 @@
       </div>
     </div>
   </section>
-
-
-
-  <!-- PARTE FABIO -->
 
   <!-- GATTO SCHRODINGER -->
   <div id="gatto-schrodinger">
